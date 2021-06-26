@@ -1,0 +1,99 @@
+
+Capitolul 7: (2 slide-uri)
+
+	Logging, Auditing and Resilience
+
+		When things go wrong in your data processing pipeline it may not be the fault of the platform or the developers. It could be the source provider
+	updating their software, or an intermittent loss of connectivity to an Azure service. All the faults can have the ability to disrupt your warehouse and 
+	ultimately cause loss of service to your users. In this case, you and your development team are obliged to know how your platform behaves when running 
+	smoothly and also to have a deep understanding of how it behaves when things go wrong.
+
+		1. Logging the Data Movement Process
+
+			Logs can get a large fair amount of repetition, and the ability to write detailed filtering logic is very useful. For these reasons, 
+		Azure SQL Database is always a recommendation that embeds a logging schema in the same database that would serve as a metadata store.
+			An example Audit schema is shown in Figure 7-1 (pag 183)
+			Azure SQL Database is one of many options that could be used here;
+			Every activity in the platform should be logged. 
+			The first events to be logged should be the start and end of each pipeline that is run in Data Factory. 
+			With a log entry, you have the ability to frame each of your processes and derive a success or failure value for each. The platform should follow:
+			• Load id: The load identifier that is assigned to the individual execution of the pipeline
+			• Date and time: The date and time the log event occurred
+			• Pipeline name: The Data Factory pipeline name pulled from a system variable
+		Figure 7-2 shows how top and tail logging should be implemented for all pipelines in a
+		hierarchy. (pag 185)
+
+		2. Auditing the Data Movement Process
+
+			There are two main basic auditing requirements that will allow you to measure what normal looks like for your solution. These are
+			• Data volumes: The amounts of data flowing through your platform
+			• Processing times: The frequency of ingestion jobs and the time it takes to complete them
+			• Watermarks: The max values for each dataset after each ingestion run, helping to detect change
+			
+				Auditing Processing Times can build a fuller picture of the capability of the platform.
+			When using Data Factory to physically move the data, this audit information is easily gathered. 
+			The key values that are returned are listed here:
+			• copyDuration: The total number of seconds the copy activity executed for.
+			• throughput: The number of kilobytes per second at which Data Factory copied the data.
+			• queuing duration: The number of seconds before the integration runtime (IR)
+			• preCopyScriptDuration: The number of elapsed seconds between
+			the start of processing by the IR and the completion of the pre-copy script.
+			• timeToFirstByte: The number of seconds between the completion
+			of the pre-copy script and the retrieval of the first byte of data.
+			• transferDuration: The number of elapsed between the first byte and the last byte.
+			
+		3. Incorporating Resilience into the Data Movement Process
+
+			The first step toward resiliency is to incorporate some basic defensive checks, allowing the platform to detect problems.
+			The second is then being able to act on those problems autonomously,  so that downstream issues do not occur.
+			
+			The Azure Data Factory native alerting is useful for a quick and easy implementation; they are slightly limiting due to 
+		the information they provide and the way in which they are displayed. 
+			Logic Apps allow you to implement many different logical outcomes to a given failure code and can be invoked using a REST API
+			call from Data Factory. 		
+
+Capitolul 8: (1 slide)
+	Using Scripting and Automation
+
+		A common attribute of many developers is the desire to do things quickly, consistently, and once only. To address this desire, 
+		scripting and automation are often used as they provide a consistent method to complete regularly occurring tasks. 
+
+		1. The Power of PowerShell
+
+			PowerShell is the go-to scripting language for system administrators and power users looking to rapidly automate common 
+		tasks across their enterprise.
+
+		2. Commonly Used Scripts
+
+			Code generation is an accelerator that allows warehouse projects to get off the ground quickly. There are three elements that are required 
+		to facilitate a code generation approach:
+		• Data contracts: SQL tables and procedures that hold the entityspecific metadata
+		• SQL templates: Predefined SQL procedures and tables that will have placeholders for text replacement
+		• The PowerShell script: A PowerShell script that unions the other two elements to create numerous implementations of a pattern within seconds
+		
+Capitolul 9: (2 slide-uri)
+
+	Beyond the Modern Data Warehouse
+
+		Now looking at what sits beyond the modern data warehouse, there is a wealth of BI products in the market that provide a range of capabilities 
+	and visualizations to the user.
+		Looking at Power BI, as that is the visualization tool for any data and also examine some other Microsoft products for data as it leaves 
+	the data warehouse such as Azure Analysis Services and Azure Cosmos DB.
+
+		1. Microsoft Power BI
+
+		Microsoft Power BI (Power BI) is the data visualization product. 
+		Power BI uses the same analytical engine that is used for Analysis Services, optimizing analytical queries over tabular data using 
+	in-memory processing.
+	Power BI is made up of several key components:
+	• Power BI desktop: The primary development tool for Power BI files.
+	• Power BI report builder: The report builder used for creating paginated reports.
+	• Power BI service: The web-based portal where dashboards and reports are published to.
+
+		2. Azure Analysis Services
+
+		Azure Analysis Services (AAS) is a PaaS implementation of the on-premises product that came as part of the SQL Server Data Tools pack.
+		Azure Analysis Services provides an ability to scale the model to meet demands of processing and querying.
+		3. Azure Cosmo DB
+		Cosmos DB is a NoSQL database that provides the ability to store JSON documents in a globally distributed, highly resilient environment that 7
+	offers unrivaled service level agreements and extremely low latency times, therefore making it an ideal platform for web development.

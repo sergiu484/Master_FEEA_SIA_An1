@@ -1,0 +1,125 @@
+Imports Microsoft.AnalysisServices.AdomdClient
+Public Class Form1
+    Function connect2measures() As Array
+        Dim conn As New AdomdConnection("Provider=SQLNCLI11.1;Data Source=MV-W81-32BITS;" & _
+                        "Integrated Security=SSPI;Initial Catalog=L1")
+
+        Dim m1 As Array
+        conn.Open()
+        Dim cmd As New AdomdCommand("SELECT {[Measures].AllMembers} ON 0" & _
+                " FROM [Adventure Works DW2012-cube]")
+        cmd.Connection = conn
+        m1 = connect(cmd, 1)
+        conn.Close()
+        Return m1
+    End Function
+    Function connect2data(measure As String) As Array
+        Dim conn As New AdomdConnection("Provider=SQLNCLI11.1;Data Source=MV-W81-32BITS;" & _
+                        "Integrated Security=SSPI;Initial Catalog=L1")
+        Dim m2 As Array
+        conn.Open()
+        Dim cmd As New AdomdCommand("SELECT NON EMPTY [Order Date].[All].Children ON rows," & _
+        " NON EMPTY [Dim Product].[All].children ON columns FROM [Adventure Works DW2012-cube]" & _
+        " WHERE " & measure)
+        cmd.Connection = conn
+        m2 = connect(cmd, 2)
+        conn.Close()
+        Return m2
+    End Function
+    Function connect(cmd As AdomdCommand, AxesNo As Integer) As Array
+        Dim noLines As Integer
+        Dim noCols As Integer
+        Dim matrix(0, 0) As String
+        Dim cs As CellSet
+        cs = cmd.ExecuteCellSet
+        noCols = cs.Axes(0).Positions.Count
+        If AxesNo = 1 Then
+            noLines = 1
+        Else
+            noLines = cs.Axes(1).Positions.Count
+        End If
+        Dim axis As Axis
+        If AxesNo > 1 Then
+            ReDim matrix(noCols, noLines)
+            matrix(0, 0) = ""
+            For i = 0 To noCols - 1
+                matrix(0, i + 1) = cs.Axes(0).Positions(i).Members(0).Caption
+                axis = cs.Axes(1)
+                For j = 0 To noLines - 1
+                    matrix(j + 1, 0) = axis.Positions(j).Members(0).Caption
+                    matrix(j + 1, i + 1) = Math.Round(cs(i, j).Value, 2, MidpointRounding.AwayFromZero)
+                Next
+            Next
+        Else
+            ReDim matrix(noLines - 1, noCols)
+            matrix(0, 0) = ""
+            For i = 0 To noCols - 1
+                matrix(0, i + 1) = cs.Axes(0).Positions(i).Members(0).Caption
+            Next
+        End If
+        Return matrix
+    End Function
+
+
+
+    Function CreateDataView(matrix As Array) As ICollection
+        Dim noLines As Integer
+        Dim noCols As Integer
+        noCols = matrix.GetLength(1) - 1
+        noLines = matrix.GetLength(0) - 1
+        Dim dt As New DataTable()
+        Dim dr As DataRow
+        If matrix.Length > 1 Then
+            dt.Columns.Add(New DataColumn("Year", GetType(String)))
+            Dim k, l As Integer
+            For k = 0 To noCols - 1
+                dt.Columns.Add(New DataColumn(matrix(0, k + 1), GetType(String)))
+            Next
+            For l = 1 To noLines
+                dr = dt.NewRow()
+                For k = 0 To noCols
+                    dr(k) = matrix(l, k)
+                Next
+                dt.Rows.Add(dr)
+            Next
+        End If
+        Dim dv As New DataView(dt)
+        Return dv
+    End Function
+    Private Sub buildChart(matrix As Array)
+        Chart1.Series.Clear()
+        Dim noLines As Integer
+        Dim noCols As Integer
+        noCols = matrix.GetLength(1) - 1
+        noLines = matrix.GetLength(0) - 1
+        For k = 1 To noCols
+            Chart1.Series.Add(matrix(0, k))
+        Next
+        For l = 1 To noLines
+            For k = 1 To noCols
+                Chart1.Series(matrix(0, k)).Points.AddXY(matrix(l, 0), matrix(l, k))
+            Next
+        Next
+    End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        DataGridView1.DataSource = Nothing
+        Dim measure As String = "[Measures].[" & ComboBox1.SelectedItem.ToString() & "]"
+        DataGridView1.DataSource = CreateDataView(connect2data(measure))
+    End Sub
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim measure As String = "[Measures].[" & ComboBox1.SelectedItem.ToString() & "]"
+        buildChart(connect2data(measure))
+    End Sub
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim m1, m2 As Array
+        m1 = connect2measures()
+        For i = 1 To m1.GetLength(1) - 1
+            ComboBox1.Items.Add(m1(0, i))
+        Next
+        ComboBox1.SelectedIndex = 3
+        Dim measure As String = "[Measures].[Sales Amount]"
+        m2 = connect2data(measure)
+        DataGridView1.DataSource = CreateDataView(m2)
+        buildChart(m2)
+    End Sub
+End Class
