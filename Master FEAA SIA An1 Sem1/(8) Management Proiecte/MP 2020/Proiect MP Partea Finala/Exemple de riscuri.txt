@@ -1,0 +1,30 @@
+(riscurile  -> analiza swat, activitatile critice pentru proiect) -> aparitii neprevazute ce aduc riscuri
+Risc Economic
+la nivelul oganizatii nu pot sa ajung la ele. Am nevoie de echipamente si nu le pot achizitiona
+Aplicația nu o pot instae pe departamentele care lucreaza echipa
+furnizorii sa nu se tina de cuvant, sa intazie comenzile
+Risc financiar
+ cresterea a cursului valutar, cresterea taxelor si impozitelor. 
+Depasirea pe impozite si taxe
+Risc legislativ
+anularea legii prin care angajatii din informatica sunt scutiti de impozite, poate sa fie doar o propunere legislativa..
+	in perioada urmatoare se va adopta o lege, sa nu se mai dea fonduri pentru startup-uri.
+Risc politic
+	apare in preajma alegerilor, se schimba niste prioritati sociale ale politicii, pot sa dispara anumite prioritati
+Risc tehnic
+Anuleaza/intrerupe activitate
+	srapa serverul, in momentul in care dezvolt/testez aplicatia
+	nu am sursa necesara de electrica
+	nu am wifi 
+Risc social si cultural
+	neincrederea oamenilor in aplicatia care a iesit -> pentru proiectul nostru
+- Risc natural de intemperii
+	riscul constructiei, intarzierea activitatii
+	-> sensorii sa nu lucreze la colectarea gunoiului
+Riscul managerial
+ impact (costuri suplimentare, genereaza intarzieri de activitati)
+partea de motivatie a echipei
+atragerea expertilor in proiect (un expert = 1,2 oameni)
+dezvoltatorul aplicatiilor inteligente, putini oameni in zona respectiva
+	
+	(diminuarea sau contracararea efectelor) -> la ultima coloana
