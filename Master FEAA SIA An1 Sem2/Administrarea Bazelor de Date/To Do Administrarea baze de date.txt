@@ -1,0 +1,78 @@
+**************************************************** Saptamana 10 ***************************************************
+Curs 5 21.04.2021
+	1. Test Kahoot Seminar 10
+		1. By default, in Oracle 12c the password is case sensitive -> True
+		2. The most powerful user in Oracle is -> SYS
+		3. All Oracle users may be found in -> DBA_USERS
+		4. The command to give a privelege to a user is -> GRANT
+		5. The "CREATE TABLE" right -> Is a system privilege
+		6. To grant select rights for just a few columns you should use -> a view and grant SELECT on it to the users
+		7. Choose the statement shich is FALSE -> Roles may have the same name if created in different schemas
+		8. The commmand to remove an audited operation is -> NOAUDIT
+		9. The Oracle package for handling FGA is -> DBMS_FGA
+		10. If you want to audit every single UPDATE, you should use -> The BY ACCESS option
+**************************************************** Saptamana 7 ***************************************************
+Seminar 7 31.03.2021
+	1. Test Kahoot Seminar 7
+		1. You can generate optimizer statistics using -> DBMS_STATS
+		2. The Oracle optimizer selects the execution plan with -> The lowest cost
+		3. Tp troubleshoot the performance on the DB system level you may -> Use the AWR report
+		4. You want to spot the rows having NULL for a column. Does a B-Tree index for that column help? -> No
+		5. Which of the following is not a valid optimization technique for a full table scan? -? create more indexes
+		6. The command to create a new b-tree index is -> CREATE INDEX
+		7. You have a batch job which deletes half of a big table. Should you gather stats after this? -> Yes, beacause you changed the table significantly
+		8. In a reporting system, the best index for a column having just two values("YES","NO") is -> a bitmap index
+		9. An index knows how to reach table records because it stores -> the ROWID of the referencing table records
+		10. The execution plans are stored in -> Library cache
+**************************************************** Saptamana 6 ***************************************************
+Seminar 6 24.03.2021
+	1. Optimizarea serverului bazei de date Oracle si a interogarilor (Performance Tuning)	
+	Response Time = System Time + Wait Time
+**************************************************** Saptamana 4 ***************************************************
+Seminar 4:
+	1. Test Kahoot Seminar 4
+		1. The command to start an Oracle instance without mounting the control file is -> startup nomount
+		2. The blocks read from the database files are cached in -> db buffer cache
+		3. An INSERT statement is a -> DML Statement
+		4. If you want to save a setting in the SPFILE onlyyou need to use -> ALTER SYSTEM SET ... SCOPE=SPFILE
+		5. What is NOT stored in the controlfile? -> The location of the second controlfile (if any)
+		6. The redolog files are written by -> LOGWR
+		7. The redolog is used to rollback transactions -> False
+		8. An Oracle instance is -> A collection of processes and memory structures
+		9. To kick out everybody from the database but cleanly close datafiles you should use -> shutdown immediate
+		10. The most powerful user in Oracle is -> sys
+**************************************************** Saptamana 2 ***************************************************
+Seminar 2
+	1. Importarea imaginea masinei virtuale
+	2. Instalarea Server de Base de Date Oracle
+	3. Test Kahoot Seminar 2
+		1. What is a database? -> An organized collection of data
+		2. The "c" from Oracle 12c version stands for? -> Cloud
+		3. Oracle is a...? -> relational database
+		4. In terms of acces speed, I'd like my data to be on ...? -> CPU Caches(Procesorul)
+		5. In Linux, how can we append the output of a command to a file? -> We can use command >> file
+		6. The command to make a folder in Linux is...? -> mkdir
+		7. What is not a valid Oracle edition? -> Professional
+		8. What command you'd use to find the process eating most of your CPU power? -> top
+		9. A Megabyte is...? -> 1024 Kilobytes
+		10. Oracle is not avaible on...? -> MS DOS
+**************************************************** Saptamana 1 ***************************************************
+Seminar 1 17.02.2021
+Criterii de Evaluare:
+	1. Proiect 75%
+	2. Test Grila 25%
+	3. Bonus Nota, Intrebari la Sfarsitul Seminarui (Top 3 Kahoot!)
+	
+
+To Do Next Week 24.02.2021:
+	1. Exercitiu de pe Prezentare PPT:
+		1. ls
+		2. mkdir u01
+		3. cd u01
+		4. mkdir playground
+		5. touch cpu_count.txt
+		6. ls
+		7. lscpu
+		8. nproc
+		9. echo Number of CPU $(nproc) > cpu_count.txt
+		10. cat cpu_count.txt	
