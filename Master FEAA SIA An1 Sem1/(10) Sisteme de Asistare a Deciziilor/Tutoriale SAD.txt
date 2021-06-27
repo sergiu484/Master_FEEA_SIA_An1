@@ -1,0 +1,11 @@
+Tutoriale SAD:
+	1. Car Rental System | VB.NET Project
+		https://www.youtube.com/watch?v=76RBo2o49mI
+	2. Car Dealer Management Systems in Visual Basic.Net - Full Tutorial
+		https://www.youtube.com/watch?v=tvaTuXJYnl8&fbclid=IwAR1O1xPg01RaELofnitTZ8Y92o3lze2JP2AcPB7_XB1Pr7B48t51XtbYktU
+	3. Connect Access Database to VB.NET
+		https://www.youtube.com/watch?v=cwDqjmSmtMQ
+	4. Link Chart /Graph with Database
+		https://www.youtube.com/watch?v=h3nHrZxDub8&fbclid=IwAR0lywns3xfciZFasIIarm5fnMXy44UaSrhpIZ8Lay660z7FbAeOkC5ME9k
+	5. Link Multiple Charts with Access Database
+		https://www.youtube.com/watch?v=dQB0eLace4Q&list=PLJiGI-KZnz3R2juHIAWmV7rHIZzDTvm7W&index=2&fbclid=IwAR3raAkJbt7RrgoPIdmowKxcfqrCNloB63uJWKiRj5OGJJmZ-RT5lXCXvNY	

@@ -1,0 +1,144 @@
+Imports System.Data.SqlClient
+Imports Microsoft.Office.Interop
+
+
+
+Public Class Form1
+    Dim conn_str = "server=DESKTOP-0KG75CD; database=AdventureWorksDW2012; integrated security=sspi"
+    Dim q = "select CAST(YEAR(OrderDate) AS char(4)) + '-' + CAST(MONTH (OrderDate) AS char(2)) AS OrdYM, AVG(SalesAmount) As AvgSales 
+            from FactResellerSales 
+            group by YEAR(OrderDate), MONTH(OrderDate)
+            order by YEAR(OrderDate), MONTH(OrderDate)"
+
+    Dim tbl = "FactResellerSales"
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim ExlApp As Excel.Application
+        Dim ExlWkBook As Excel.Workbook
+        Dim ExlWkSheet As Excel.Worksheet
+        ExlApp = New Excel.Application
+        ExlWkBook = ExlApp.Workbooks.Add
+        ExlWkSheet = ExlWkBook.Worksheets.Add
+        ExlWkSheet.Name = "Nume Sheet"
+        ExlWkSheet.Range("A1:D1").Merge()
+        ExlWkSheet.Range("A1").Value = "Titlul Tabelului"
+        ExlWkSheet.Range("A1").Font.Bold = True
+        ExlWkSheet.Range("A1").Font.Size = 12
+        ExlWkSheet.Range("A1").HorizontalAlignment = Excel.Constants.xlCenter
+        ExlWkSheet.Range("A1").BorderAround2(1, Excel.XlBorderWeight.xlThin)
+        ExlWkSheet.Range("A2:D2").HorizontalAlignment = Excel.Constants.xlCenter
+        ExlWkSheet.Range("A2:D2").BorderAround2(1, Excel.XlBorderWeight.xlThin)
+        ExlWkSheet.Range("A2").Value = "Titlu prima coloana"
+        ExlWkSheet.Range("B2").Value = "Titlu a doua coloana"
+        ExlWkSheet.Range("C2").Value = "Titlu a 3 a coloana"
+        ExlWkSheet.Range("D2").Value = "Titlu a 4 a coloana"
+        ExlWkSheet.Range("A3").Value = "1"
+        ExlWkSheet.Range("A4").Value = "2"
+        ExlWkSheet.Range("A3:A4").BorderAround2(1, Excel.XlBorderWeight.xlThin)
+        ExlWkSheet.Range("B3:D4").NumberFormat = "#,##0.00 ""LEI"""
+        ExlWkSheet.Range("D3").Formula = "=C3-B3"
+        ExlWkSheet.Range("D4").Formula = "=C4-B4"
+        ExlWkSheet.Range("B3:D4").BorderAround2(1, Excel.XlBorderWeight.xlThin)
+        ExlWkSheet.Range("B5").Formula = "=Sum(B3:B4)"
+        ExlWkSheet.Range("B5:D5").FillRight()
+        ExlWkSheet.Range("A5:D5").BorderAround2(1, Excel.XlBorderWeight.xlThin)
+        ExlWkSheet.Range("B3").Value = "354675585"
+        ExlWkSheet.Range("C3").Value = "3545585"
+        ExlWkSheet.Range("B4").Value = "3585"
+        ExlWkSheet.Range("C4").Value = "354565585"
+        ExlWkSheet.Range("A5").Value = "Total"
+
+        ExlWkSheet.Calculate()
+        ExlWkSheet.Range("A1:D5").Columns.AutoFit()
+
+
+        'de introdus o metoda care sa citeasca datele de undeva si sa le scrie in xlsx
+
+
+        Try
+            ExlWkBook.SaveAs("C:\Users\10x64\Desktop\Exports\TestSheet.xlsx")
+        Catch ex As Exception
+            MessageBox.Show("File access problem!")
+        End Try
+
+        ExlWkBook.Close()
+        ExlApp.Quit()
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Shell("C:\Program Files\Microsoft Office\Office15\Excel C:\Users\10x64\Desktop\Exports\TestSheet.xlsx", vbNormalFocus)
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim conn = New SqlConnection(conn_str)
+        conn.Open()
+        Dim da = New SqlDataAdapter(q, conn)
+        Dim ds = New DataSet
+        da.Fill(ds, tbl)
+        Dim oXL As Object
+        Dim oBook As Object
+        Dim oSheet As Object
+        Dim oCh As Object
+        oXL = CreateObject("Excel.application")
+        oBook = oXL.Workbooks.Add
+        oSheet = oBook.Worksheets.Item(1)
+        Dim n = ds.Tables(tbl).Rows.Count - 1
+        Dim matr(n, 1)
+        For i = 0 To n
+            matr(i, 0) = ds.Tables(tbl).Rows(i).Item("OrdYM")
+            matr(i, 1) = ds.Tables(tbl).Rows(i).Item("AvgSales")
+
+        Next
+        oSheet.Range("A1").Resize(n + 1, 2).Value = matr
+        oCh = oSheet.ChartObjects.Add(150, 40, 800, 400).Chart
+        oCh.ChartType = Excel.XlChartType.xlLine
+        oCh.SetSourceData(oSheet.Range("A1:B" & (n + 1).ToString()))
+        oCh.SeriesCollection(1).name = "Average Sales"
+        Dim cboSel = Me.cbo.SelectedItem.ToString()
+        Dim cboVal = Me.tbo.Text
+        oCh.SeriesCollection(1).Trendlines.Add(Type:=cboSel, Forward:=cboVal, Backward:=0,
+               DisplayEquation:=True, DisplayRSquared:=False).select()
+        oXL.Visible = True
+        oXL.UserControl = True
+
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim conn = New SqlConnection(conn_str)
+        conn.Open()
+        Dim da = New SqlDataAdapter(q, conn)
+        Dim ds = New DataSet
+        da.Fill(ds, tbl)
+        DataGridView1.DataMember = tbl
+        DataGridView1.DataSource = ds
+        Dim n = ds.Tables(tbl).Rows.Count - 1
+        Dim x
+        Dim y
+        For Each cs As DataVisualization.Charting.Series In Chart1.Series
+            cs.Points.Clear()
+        Next
+        For i = 0 To n
+            x = ds.Tables(tbl).Rows(i).Item("OrdYM")
+            y = ds.Tables(tbl).Rows(i).Item("AvgSales")
+
+
+            Chart1.Series("Average Sales").Points.AddXY(x, y)
+
+
+
+        Next
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+
+        Dim newForm = New Form3()
+        newForm.Show()
+
+    End Sub
+End Class

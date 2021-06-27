@@ -1,0 +1,333 @@
+Imports System.Data.SqlClient
+Imports Microsoft.Office.Interop
+
+
+
+Public Class Form1
+    'Dim conn_str = "server=DESKTOP-0KG75CD; database=AdventureWorksDW2012; integrated security=sspi"
+    'Dim q = "select CAST(YEAR(OrderDate) AS char(4)) + '-' + CAST(MONTH (OrderDate) AS char(2)) AS OrdYM, AVG(SalesAmount) As AvgSales 
+    'from FactResellerSales 
+    'group by YEAR(OrderDate), MONTH(OrderDate)
+    ' order by YEAR(OrderDate), MONTH(OrderDate)"
+
+    Dim conn_str = "server=DESKTOP-0KG75CD; database=AdventureWorksDW2012; integrated security=sspi"
+    Dim q = "SELECT Left(convert(varchar(10), OrderDate, 111), 7) AS OrdYM, AVG(SalesAmount) AS AvgSales FROM FactResellerSales"
+
+    Dim lc = "WHERE OrderDate >="
+    Dim rc = "AND OrderDate <="
+    Dim goby = "GROUP BY Left(Convert(varchar(10), OrderDate, 111), 7) ORDER BY Left(Convert(varchar(10), OrderDate, 111), 7)"
+
+
+    Dim tbl = "FactResellerSales"
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim ExlApp As Excel.Application
+        Dim ExlWkBook As Excel.Workbook
+        Dim ExlWkSheet As Excel.Worksheet
+        ExlApp = New Excel.Application
+        ExlWkBook = ExlApp.Workbooks.Add
+        ExlWkSheet = ExlWkBook.Worksheets.Add
+        ExlWkSheet.Name = "Nume Sheet"
+        ExlWkSheet.Range("A1:D1").Merge()
+        ExlWkSheet.Range("A1").Value = "Titlul Tabelului"
+        ExlWkSheet.Range("A1").Font.Bold = True
+        ExlWkSheet.Range("A1").Font.Size = 12
+        ExlWkSheet.Range("A1").HorizontalAlignment = Excel.Constants.xlCenter
+        ExlWkSheet.Range("A1").BorderAround2(1, Excel.XlBorderWeight.xlThin)
+        ExlWkSheet.Range("A2:D2").HorizontalAlignment = Excel.Constants.xlCenter
+        ExlWkSheet.Range("A2:D2").BorderAround2(1, Excel.XlBorderWeight.xlThin)
+        ExlWkSheet.Range("A2").Value = "Titlu prima coloana"
+        ExlWkSheet.Range("B2").Value = "Titlu a doua coloana"
+        ExlWkSheet.Range("C2").Value = "Titlu a 3 a coloana"
+        ExlWkSheet.Range("D2").Value = "Titlu a 4 a coloana"
+        ExlWkSheet.Range("A3").Value = "1"
+        ExlWkSheet.Range("A4").Value = "2"
+        ExlWkSheet.Range("A3:A4").BorderAround2(1, Excel.XlBorderWeight.xlThin)
+        ExlWkSheet.Range("B3:D4").NumberFormat = "#,##0.00 ""LEI"""
+        ExlWkSheet.Range("D3").Formula = "=C3-B3"
+        ExlWkSheet.Range("D4").Formula = "=C4-B4"
+        ExlWkSheet.Range("B3:D4").BorderAround2(1, Excel.XlBorderWeight.xlThin)
+        ExlWkSheet.Range("B5").Formula = "=Sum(B3:B4)"
+        ExlWkSheet.Range("B5:D5").FillRight()
+        ExlWkSheet.Range("A5:D5").BorderAround2(1, Excel.XlBorderWeight.xlThin)
+        ExlWkSheet.Range("B3").Value = "354675585"
+        ExlWkSheet.Range("C3").Value = "3545585"
+        ExlWkSheet.Range("B4").Value = "3585"
+        ExlWkSheet.Range("C4").Value = "354565585"
+        ExlWkSheet.Range("A5").Value = "Total"
+
+        ExlWkSheet.Calculate()
+        ExlWkSheet.Range("A1:D5").Columns.AutoFit()
+
+
+        'de introdus o metoda care sa citeasca datele de undeva si sa le scrie in xlsx
+
+
+        Try
+            ExlWkBook.SaveAs("C:\Users\10x64\Desktop\Exports\TestSheet.xlsx")
+        Catch ex As Exception
+            MessageBox.Show("File access problem!")
+        End Try
+
+        Dim cfColorScale As Excel.ColorScale
+        cfColorScale = sht.Range("C5:C8").FormatCondition.AddColorScale(3)
+        cfColorScale.ColorScaleCriteria(1).FormatColor.Color = RGB(255, 255, 0)
+        cfColorScale.ColorScaleCriteria(2).FormatColor.Color = RGB(0, 255, 0)
+        cfColorScale.ColorScaleCriteria(3).FormatColor.Color = RGB(0, 139, 0)
+        Dim cfDataBar As Excel.Databar
+        cfDataBar = sht.Range("B5:B8").FormatConditions.AddDatabar
+        Dim cficonset As Excel.IconSetCondition
+        cficonset = sht.Range("D5:D8").FormatConditions.AddIconSetCondition()
+        cficonset.IconSet = wbk.IconSets(8)
+
+        With cficonset.IconCriteria(2)
+            .Type = Excel.XlConditionValueTypes.xlConditionValuePercent
+            .Value = 10
+            .Operator = Excel.XlFormatConditionOperator.xlGreaterEqual
+        End With
+        With cficonset.IconCriteria(3)
+            .Type = Excel.XlConditionValueTypes.xlConditionValuePercent
+            .Value = 20
+            .Operator = Excel.XlFormatConditionOperator.xlGreaterEqual
+        End With
+
+        ExlWkBook.Close()
+        ExlApp.Quit()
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Shell("C:\Program Files\Microsoft Office\Office15\Excel C:\Users\10x64\Desktop\Exports\TestSheet.xlsx", vbNormalFocus)
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim lq = q _
+           & lc & "'" & DTP1.Value.ToShortDateString.ToString() & "'" _
+           & rc & "'" & DTP2.Value.ToShortDateString.ToString() & "'" _
+           & goby
+
+        Dim conn = New SqlConnection(conn_str)
+        conn.Open()
+        Dim da = New SqlDataAdapter(lq, conn)
+        Dim ds = New DataSet
+        da.Fill(ds, tbl)
+        Dim oXL As Object
+        Dim oBook As Object
+        Dim oSheet As Object
+        Dim oCh As Object
+        oXL = CreateObject("Excel.application")
+        oBook = oXL.Workbooks.Add
+        Dim n = ds.Tables(tbl).Rows.Count - 1
+        Dim matr(n, 1)
+        For i = 0 To n
+            matr(i, 0) = ds.Tables(tbl).Rows(i).Item("OrdYM")
+            matr(i, 1) = ds.Tables(tbl).Rows(i).Item("AvgSales")
+
+        Next
+
+        'oSheet.Range("A1").Resize(n + 1, 2).Value = matr
+        'oCh = oSheet.ChartObjects.Add(150, 40, 800, 400).Chart
+        ' oCh.ChartType = Excel.XlChartType.xlLine
+        ' oCh.SetSourceData(oSheet.Range("A1:B" & (n + 1).ToString()))
+        'oCh.SeriesCollection(1).name = "Average Sales"
+        'Dim cboSel = Me.cbo.SelectedItem.ToString()
+        'Dim cboVal = Me.tbo.Text
+        ' oCh.SeriesCollection(1).Trendlines.Add(Type:=cboSel, Forward:=cboVal, Backward:=0,
+        'DisplayEquation:=True, DisplayRSquared:=False).select()
+        ' oXL.Visible = True
+        'oXL.UserControl = True
+
+        oSheet = oBook.WorkSheets.Item(1)
+        oSheet.Range("A1").Resize(n + 1, 2).Value = matr
+        oCh = oSheet.ChartObjects.Add(150, 40, 800, 400).Chart
+        oCh.ChartType = Excel.XlChartType.xlXYScatterLines
+        oCh.SetSourceData(oSheet.Range("A1:B" & (n + 1).ToString()))
+        oCh.SeriesCollection(1).name = "Average Sales"
+
+
+        Dim cboSel = Me.cbo.SelectedItem.ToString()
+        Dim fwd = Me.tbo.Text
+
+        Dim type = ""
+        If cbo.SelectedItem = "Logarithmic" Then
+            type = "-4133"
+
+        ElseIf cbo.SelectedItem = "Linear" Then
+            type = "-4132"
+
+        ElseIf cbo.SelectedItem = "Polynomial" Then
+            type = "3"
+
+        ElseIf cbo.SelectedItem = "Power" Then
+            type = "4"
+
+        ElseIf cbo.SelectedItem = "Exponential" Then
+            type = "5"
+        End If
+
+        If cboSel = "Polynomial" Then
+                Dim op As Integer
+            'op = Int32.Parse(Me.cbo1_ordpoly.SelectedItem)
+            op = Int32.Parse(Me.cbo1_ordpoly.Text)
+            oCh.SeriesCollection(1).TrendLines.Add(Type:=type, order:=op, Forward:=fwd, Backward:=0, DisplayEquation:=False, DisplayRSquared:=True).select()
+        Else
+            oCh.SeriesCollection(1).TrendLines.Add(Type:=type, Forward:=fwd, Backward:=0, DisplayEquation:=False, DisplayRSquared:=True).select()
+
+        End If
+
+        Dim R_sq = oCh.SeriesCollection(1).TrendLines(1).DataLabel.text
+        For i = 0 To n
+            oSheet.Range("C" & (i + 1)) = (i + 1).ToString
+
+        Next
+        oSheet.Range("D1") = R_sq
+        oSheet.Range("E1") = Mid(R_sq, 6, Len(R_sq) - 5)
+        oCh.SeriesCollection(1).TrendLines.DisplayRSquared = False
+        oCh.SeriesCollection(1).TrendLines.DisplayEquation = True
+        Dim T_eq = oCh.SeriesCollection(1).TrendLines.DataLabel.text
+        oSheet.Range("F1") = T_eq
+        oXL.Visible = True
+        oXL.UserControl = True
+        'codul e scris de la penultima pag din lab4 excel
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim lq = q _
+            & lc & "'" & DTP1.Value.ToShortDateString.ToString() & "'" _
+            & rc & "'" & DTP2.Value.ToShortDateString.ToString() & "'" _
+            & goby
+
+        Dim conn = New SqlConnection(conn_str)
+        conn.Open()
+        Dim da = New SqlDataAdapter(lq, conn)
+        Dim ds = New DataSet
+        da.Fill(ds, tbl)
+        DataGridView1.DataMember = tbl
+        DataGridView1.DataSource = ds
+        Dim n = ds.Tables(tbl).Rows.Count - 1
+        Dim x
+        Dim y
+        For Each cs As DataVisualization.Charting.Series In Chart1.Series
+            cs.Points.Clear()
+        Next
+        For i = 0 To n
+            x = ds.Tables(tbl).Rows(i).Item("OrdYM")
+            y = ds.Tables(tbl).Rows(i).Item("AvgSales")
+
+            Chart1.Series("Average Sales").Points.AddXY(x, y)
+
+        Next
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+
+        Dim newForm = New Form3()
+        newForm.Show()
+
+    End Sub
+
+    Private Sub cbo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo.SelectedIndexChanged
+        ' Dim cboSel = Me.cbo.SelectedItem.ToString()
+
+        'If cbo.SelectedItem = "Logarithmic" Then
+        'cboSel = -4133
+
+        'Else
+        'If cbo.SelectedItem = "Linear" Then
+        'cboSel = -4132
+
+        'Else
+        'If cbo.SelectedItem = "Polynomial" Then
+        'cboSel = 3
+
+        'Else
+        'If cbo.SelectedItem = "Power" Then
+        'cboSel = 4
+
+        'Else
+        'If cbo.SelectedItem = "Exponential" Then
+        'cboSel = 5
+
+        'End If
+        'End If
+        'End If
+        'End If
+
+        'End If
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Dim lq = q _
+           & lc & "'" & DTP1.Value.ToShortDateString.ToString() & "'" _
+           & rc & "'" & DTP2.Value.ToShortDateString.ToString() & "'" _
+           & goby
+        Dim conn = New SqlConnection(conn_str)
+        conn.Open()
+        Dim da = New SqlDataAdapter(lq, conn)
+        Dim ds = New DataSet
+        da.Fill(ds, tbl)
+        Dim oXL As Object
+        Dim oBook As Object
+        Dim oSheet As Object
+        Dim oCh As Object
+        oXL = CreateObject("Excel.application")
+        oBook = oXL.Workbooks.Add
+        Dim n = ds.Tables(tbl).Rows.Count - 1
+        Dim matr(n, 1)
+        For i = 0 To n
+            matr(i, 0) = ds.Tables(tbl).Rows(i).Item("OrdYM")
+            matr(i, 1) = ds.Tables(tbl).Rows(i).Item("AvgSales")
+
+        Next
+
+        Dim trend(8, 1) As String
+        trend(0, 0) = "-4133"
+        trend(0, 1) = "Logarithmic"
+        trend(1, 0) = "-4132"
+        trend(1, 1) = "Linear"
+        For k = 2 To 6
+            trend(k, 0) = "3"
+            trend(k, 1) = "Polynomial" & k.ToString
+
+        Next
+
+        trend(7, 0) = "4"
+        trend(7, 1) = "Power"
+        trend(8, 0) = "5"
+        trend(8, 1) = "Exponential"
+        Dim o As Integer
+        Dim max_R_sq = ""
+        Dim men_type As Integer
+        For k = 0 To 8
+            oSheet = oBook.WorkSheets.Add
+            oSheet.Range("A1").Resize(n + 1, 2).Value = matr
+            oCh = oSheet.ChartObjects.Add(150, 40, 800, 400).Chart
+            oCh.ChartType = Excel.XlChartType.xlXYScatterLines
+            oCh.SetSourceData(oSheet.Range("A1:B" & (n + 1).ToString))
+            oCh.SeriesCollection(1).name = "Average Sales"
+            If k >= 2 And k <= 6 Then
+                o = Int32.Parse(Mid(trend(k, 1), 11, 1))
+                oCh.SeriesCollection(1).TrendLines.Add(Type:=trend(k, 0), oder:=0, Forward:=1, Backward:=0, DisplayEquation:=False, DisplayRSquared:=True).select()
+            Else
+                oCh.SeriesCollection(1).TrendLines.Add(Type:=trend(k, 0), Forward:=1, Backward:=0, DisplayEquation:=False, DisplayRSquared:=True).select()
+            End If
+            Dim R_sq = oCh.SeriesCollection(1).TrendLines(1).DataLabel.text
+            R_sq = Mid(R_sq, 6, Len(R_sq) - 5)
+            If R_sq > max_R_sq Then
+                max_R_sq = R_sq
+                men_type = k
+
+            End If
+            MsgBox("Your Data indicate the" & trend(men_type, 1).ToString & "trend from those 5 on the upper-left, with a max trust of:" & max_R_sq)
+            oBook.Close(savechanges:=False)
+            oXL.Quit()
+        Next
+    End Sub
+
+
+End Class

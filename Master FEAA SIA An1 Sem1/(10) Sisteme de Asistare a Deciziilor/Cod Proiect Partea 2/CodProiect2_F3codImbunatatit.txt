@@ -1,0 +1,212 @@
+Imports Microsoft.Office.Interop
+Imports MapPoint
+
+Public Class Form3
+    Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim eapp As New Excel.Application
+        Dim wbk As Excel.Workbook = eapp.Workbooks.Open("C:\Users\10x64\Desktop\Exports\L.xlsx")
+        Dim sh As Excel.Worksheet = wbk.Sheets(1)
+        For i As Integer = 5 To 16
+            Me.ComboBox1.Items.Add(sh.Range("A" & i.ToString).Value)
+            Me.ComboBox2.Items.Add(sh.Range("A" & i.ToString).Value)
+        Next
+        wbk.Close()
+        eapp.Quit()
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.TextBox1.Text = Me.ComboBox1.SelectedItem
+        Dim oApp As New MapPoint.Application
+        oApp.Visible = True
+        oApp.UserControl = True
+        Dim oMap As MapPoint.Map
+        oMap = oApp.NewMap()
+        oMap.MapStyle = GeoMapStyle.geoMapStyleNight
+        Dim oFindRes As MapPoint.FindResults
+        oFindRes = oMap.FindResults(Me.ComboBox1.SelectedItem)
+        Dim oLocation As MapPoint.Location
+        oLocation = oFindRes(1)
+        oLocation.GoTo()
+        Dim oPushPin As MapPoint.Pushpin
+        oPushPin = oMap.AddPushpin(oLocation)
+        oPushPin.BalloonState = MapPoint.GeoBalloonState.geoDisplayBalloon
+        MsgBox("MapPoint will close now!")
+        Try
+            oApp.Quit()
+        Catch exc As Exception
+            MsgBox("Already closed!")
+
+        End Try
+
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Me.TextBox1.Text = "Mapping data!"
+        Dim oApp As New MapPoint.Application
+        oApp.Visible = True
+        oApp.UserControl = True
+        Dim oMap As MapPoint.Map
+        oMap = oApp.NewMap()
+        oMap.MapStyle = GeoMapStyle.geoMapStyleData
+        Dim cons As String
+        cons = "C:\Users\10x64\Desktop\Exports\L.xlsx!Sheet1!A4:F16"
+        Dim ods As MapPoint.DataSet
+        ods = oApp.ActiveMap.DataSets.ImportData(cons, , GeoCountry.geoCountryRomania, GeoDelimiter.geoDelimiterDefault, 0)
+        ods.Symbol = 4
+        ods.ZoomTo()
+        MsgBox("MapPoint will close now!")
+        Try
+
+            oApp.Quit()
+        Catch ex As Exception
+            MsgBox("Already closed!")
+        End Try
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.TextBox1.Text = Me.ComboBox1.SelectedItem & "_" & Me.ComboBox2.SelectedItem
+        Dim oApp As New MapPoint.Application
+        oApp.Visible = True
+        oApp.UserControl = True
+        Dim oMap As MapPoint.Map
+        oMap = oApp.NewMap()
+        oMap.MapStyle = GeoMapStyle.geoMapStyleRoad
+        oMap.Application.Units = GeoUnits.geoKm
+        Dim oFindRes1 As MapPoint.FindResults
+        oFindRes1 = oMap.FindResults(Me.ComboBox1.SelectedItem & ", " & Me.ComboBox1.SelectedItem)
+        Dim oFindRes2 As MapPoint.FindResults
+        oFindRes2 = oMap.FindResults(Me.ComboBox2.SelectedItem & ", " & Me.ComboBox2.SelectedItem)
+        Dim oLocation1 As MapPoint.Location
+        Dim oLocation2 As MapPoint.Location
+        oLocation1 = oFindRes1(1)
+        oLocation1.GoTo()
+        oLocation2 = oFindRes2(1)
+        oLocation2.GoTo()
+        Dim oPushPin1 As MapPoint.Pushpin
+        oPushPin1 = oMap.AddPushpin(oLocation1)
+        oPushPin1.BalloonState = MapPoint.GeoBalloonState.geoDisplayBalloon
+        Dim oPushPin2 As MapPoint.Pushpin
+        oPushPin2 = oMap.AddPushpin(oLocation1)
+        oPushPin2.BalloonState = MapPoint.GeoBalloonState.geoDisplayBalloon
+        Dim oroute As MapPoint.Route
+        oroute = oMap.ActiveRoute
+        Dim oWaypoint1 As MapPoint.Waypoint
+        Dim oWaypoint2 As MapPoint.Waypoint
+        oWaypoint1 = oroute.Waypoints.Add(Anchor:=oLocation1)
+        oWaypoint2 = oroute.Waypoints.Add(Anchor:=oLocation2)
+        oroute.Calculate()
+        Me.TextBox2.Text = CStr(FormatNumber(oroute.Distance, 2))
+        MsgBox("MapPoint will close now!")
+        Try
+            oApp.Quit()
+        Catch ex As Exception
+            MsgBox("Already closed!")
+        End Try
+
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Me.TextBox1.Text = "Mapping data!"
+        Dim oApp As New MapPoint.Application
+        oApp.Visible = True
+        oApp.UserControl = True
+        Dim oMap As MapPoint.DataMap
+        Dim cons As String
+        cons = "C:\Users\10x64\Desktop\Exports\L.xlsx!Sheet1!A4:F16"
+        Dim ods As MapPoint.DataSet
+        ods = oApp.ActiveMap.DataSets.ImportData(cons, , GeoCountry.geoCountryRomania, GeoDelimiter.geoDelimiterDefault, 0)
+        Dim objField(2) As Object
+        objField(0) = ods.Fields("Sales income (lei)")
+        objField(1) = ods.Fields("Rental income (lei)")
+        objField(2) = ods.Fields("Interest income (lei)")
+        oMap = ods.DisplayDataMap(GeoDataMapType.geoDataMapTypeCategoricalColumn, objField, GeoShowDataBy.geoShowByRegion1,
+                                    GeoCombineDataBy.geoCombineByAverage, GeoDataRangeType.geoRangeTypeDefault,
+                                                                            GeoDataRangeOrder.geoRangeOrderDefault)
+
+        ods.ZoomTo()
+        MsgBox("MapPoint will close now!")
+        Try
+            oApp.Quit()
+        Catch ex As Exception
+            MsgBox("Already closed!")
+        End Try
+
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Me.TextBox1.Text = "Mapping data!"
+        Dim oApp As New MapPoint.Application
+        oApp.Visible = True
+        oApp.UserControl = True
+        Dim oMap As MapPoint.DataMap
+        Dim cons As String
+        cons = "C:\Users\10x64\Desktop\Exports\L.xlsx!Sheet1!A4:F16"
+        Dim ods As MapPoint.DataSet
+        ods = oApp.ActiveMap.DataSets.ImportData(cons, , GeoCountry.geoCountryRomania, GeoDelimiter.geoDelimiterDefault, 0)
+        Dim objField(2) As Object
+        objField(0) = ods.Fields("Sales income (lei)")
+        objField(1) = ods.Fields("Rental income (lei)")
+        objField(2) = ods.Fields("Interest income (lei)")
+        oMap = ods.DisplayDataMap(GeoDataMapType.geoDataMapTypeSizedPie, objField, GeoShowDataBy.geoShowByRegion1,
+                                GeoCombineDataBy.geoCombineByAverage, GeoDataRangeType.geoRangeTypeDefault,
+                                                                      GeoDataRangeOrder.geoRangeOrderDefault)
+
+        ods.ZoomTo()
+        MsgBox("MapPoint will close now!")
+        Try
+            oApp.Quit()
+        Catch ex As Exception
+            MsgBox("Already closed!")
+        End Try
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Me.TextBox1.Text = "Mapping data!"
+        Dim oApp As New MapPoint.Application
+        oApp.Visible = True
+        oApp.UserControl = True
+        Dim oMap As MapPoint.DataMap
+        Dim cons As String
+        cons = "C:\Users\10x64\Desktop\Exports\L.xlsx!Sheet1!A4:F16"
+        Dim ods As MapPoint.DataSet
+        ods = oApp.ActiveMap.DataSets.ImportData(cons, , GeoCountry.geoCountryRomania, GeoDelimiter.geoDelimiterDefault, 0)
+        oMap = ods.DisplayDataMap(GeoDataMapType.geoDataMapTypeSizedCircle, ods.Fields("Name of firm"), GeoShowDataBy.geoShowByRegion1,
+                                 GeoCombineDataBy.geoCombineByCount, GeoDataRangeType.geoRangeTypeDefault,
+                                                                      GeoDataRangeOrder.geoRangeOrderDefault)
+        ods.ZoomTo()
+        MsgBox("MapPoint will close now!")
+        Try
+            oApp.Quit()
+        Catch ex As Exception
+            MsgBox("Already closed!")
+        End Try
+
+
+
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Me.TextBox1.Text = "Mapping data!"
+        Dim oApp As New MapPoint.Application
+        oApp.Visible = True
+        oApp.UserControl = True
+        Dim oMap As MapPoint.DataMap
+        Dim cons As String
+        cons = "C:\Users\10x64\Desktop\Exports\L.xlsx!Sheet1!A4:F16"
+        Dim ods As MapPoint.DataSet
+        ods = oApp.ActiveMap.DataSets.ImportData(cons, , GeoCountry.geoCountryRomania, GeoDelimiter.geoDelimiterDefault, 0)
+        oMap = ods.DisplayDataMap(GeoDataMapType.geoDataMapTypeShadedArea, ods.Fields("Sales income(lei)"), GeoShowDataBy.geoShowByRegion1,
+                                 GeoCombineDataBy.geoCombineByAverage, GeoDataRangeType.geoRangeTypeDefault,
+                                                                      GeoDataRangeOrder.geoRangeOrderDefault)
+        ods.ZoomTo()
+        MsgBox("MapPoint will close now!")
+        Try
+            oApp.Quit()
+        Catch ex As Exception
+            MsgBox("Already closed!")
+        End Try
+    End Sub
+End Class
