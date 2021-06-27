@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="FC8B12B5-92B9-948E-1C22-D32769EC495B" mainViewID="3ABCDA06-79DC-B893-805E-3BDFDEE99190">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:18:25 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

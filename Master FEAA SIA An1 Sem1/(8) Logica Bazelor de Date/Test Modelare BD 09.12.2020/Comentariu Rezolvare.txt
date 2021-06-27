@@ -1,0 +1,32 @@
+1. O sală are o capacitate (număr de locuri) unică, care nu se schimbă în timp
+
+Relatia many-to-one dintre Sala si Teatru: Intr-un teatru pot fi mai multe sali
+
+ 2. Într-o sală, există grupuri de rânduri (ex. rândurile 1-5, rândurile 2-15 etc.); în cadrul grupului de rânduri, numărul de locuri este identic; 
+
+
+3. La o montare pot exista mai mulți regizori, însă un singur scenograf
+
+In entitatea Personal este reprezentat IdRegizor care este o cheie primara pentru aceasta entitate si IdScenograf care este obligatorie.
+
+4. La o montare un personaj poate fi jucat (pe parcursul a mai multor ani) de oricâți actori (titularul și înlocuitorii acestuia)
+
+Prin relatiile dintre entitatile Actor, Personaj si Montare putem observa ca un actor poate avea rolul a mai multor personaje, care prin urmare poate participa la o montare.
+
+5. La o montare un actor poate juca (pe parcursul a mai multor ani) mai multe personaje (care actor titular sau înlocuitor)
+
+6. O persoană (actor, regizor, client, scenograf) are oricâte adrese de e-mail, dar un singur număr de telefon
+
+Entitatea Pesoana este in relatie printr-un act de legatura cu entitatile Client, Personal, Actor.
+
+7. Un client poate rezerva oricâte bilete odată (la o rezervare)
+
+Prin legatura dintre entitatea Client si entitatea Bilet putem observa ca au o legatura de one-to-many (un client poate rezerva mai multe bilete)
+
+8. Nu se vând bilete fără loc
+
+In entitatea Sala este specificat locul si randul sa fie obligatorii.
+
+9. Comisionul este o sumă fixă care se poate modifica de la o stagiune la alta
+
+Banii pe care ii putem returna sunt in legatura directa cu returnarea biletului

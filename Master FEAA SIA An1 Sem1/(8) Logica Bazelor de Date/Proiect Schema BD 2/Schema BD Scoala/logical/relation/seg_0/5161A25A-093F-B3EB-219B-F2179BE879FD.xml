@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_5" directorySegmentName="seg_0" id="5161A25A-093F-B3EB-219B-F2179BE879FD">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 15:39:01 UTC</createdTime>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<engineerTo>
+<item key="3C5FB4A4-63FE-7DEA-CC3E-DAC09AE1D28A" value="true"/>
+</engineerTo>
+<sourcePk>BCFCA12C-D370-4E92-B707-8ADA138A5DE9</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>3AF74A12-7697-E4FC-0B53-B8F5D8F6BB35</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>414A075F-B394-A918-E48B-E9F01BBD8ACF</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

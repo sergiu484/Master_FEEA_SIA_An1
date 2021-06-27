@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="ECEF10FE-C1E4-0203-5EBC-B89DB36E81C1" name="Concurs_Olimpiada">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:20:24 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<preferredAbbreviation>Concursuri_Olimpiade</preferredAbbreviation>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_concurs_olimpiada" id="CE268EC2-4BE1-D678-09DE-F97AA485A153">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:35:02 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tip_premiu_obtinut" id="8C94E839-423D-A340-6106-0D3766E6A1C1">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:35:18 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="punctaj_acumulat" id="87268EFE-EF1B-0F6D-D4F7-27363EF2AFBD">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:35:52 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>100</dataTypePrecision>
+<ownDataTypeParameters>,100,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_elev" id="9A775ECA-7EA6-EBEA-6E8E-81FD52220543">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:40:46 UTC</createdTime>
+<generatorID>1D20BF4E-738E-CEFC-6D4C-E210AE6184D7</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<referedAttribute>4108E0BF-3B9B-C3A3-69BB-37B584474C49</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cod_profil" id="4F2DE7C4-46D6-6C06-EBFD-71728A862699">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:23:18 UTC</createdTime>
+<generatorID>1D20BF4E-738E-CEFC-6D4C-E210AE6184D7</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<referedAttribute>BFB02012-1EEC-DA4A-AD69-C8DF73C72D50</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C58B1B6F-01B7-FE3B-18B4-6C5C74FB52F1" name="x PK">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:36:25 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>CE268EC2-4BE1-D678-09DE-F97AA485A153</attributeRef>
+<attributeRef>9A775ECA-7EA6-EBEA-6E8E-81FD52220543</attributeRef>
+<attributeRef>4F2DE7C4-46D6-6C06-EBFD-71728A862699</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

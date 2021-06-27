@@ -1,0 +1,63 @@
+set serveroutput on
+declare
+    v_mesaj varchar(100);
+    v_numar number;
+    v_nota1 integer := 10;
+    v_nota2 integer := 9;
+    v_nota3 integer := 10;
+    v_medie number;
+begin
+    v_numar := 10;
+    v_mesaj := 'Text printat';
+    
+    dbms_output.put_line(v_medie);
+    v_medie := round((v_nota1 + v_nota2 + v_nota3)/3, 2);
+    dbms_output.put_line(v_medie);
+    v_nota2 := v_nota2 + 1;
+    dbms_output.put_line(v_nota2);
+--    dbms_output.put_line(v_numar);
+--    dbms_output.put_line(v_mesaj);
+--    dbms_output.put_line('Mai incet nu se putea');
+--    dbms_output.put_line('Dar se putea mai repede');
+end;
+
+************************************************************************************************************************************************
+
+--select * from studenti where bursa is not null;
+
+declare
+    v_nr_matricol integer := 113;
+    v_bursa number;
+    v_nume varchar2(20);
+    v_prenume varchar2(20);
+    v_nota number;
+begin
+    select bursa into v_bursa from studenti where nr_matricol = v_nr_matricol;
+    DBMS_OUTPUT.put_line('Bursa studentului este: ' || v_bursa);
+    select nume,prenume into v_nume,v_prenume from studenti where nr_matricol = v_nr_matricol;
+    DBMS_OUTPUT.put_line('Numele studentului este: ' || v_nume || ' ' || v_prenume);
+    select max(valoare) into v_nota from note where nr_matricol = v_nr_matricol;
+    DBMS_OUTPUT.put_line('Ce mai mare nota a studentului este: ' || v_nota);
+end;
+
+************************************************************************************************************************************************
+
+--select * from note where nr_matricol=111;
+-- un student care are mai multe note
+
+set serveroutput on
+
+declare
+    v_medie number;
+begin
+    select avg(valoare) into v_medie from note where nr_matricol = 111;
+    dbms_output.put_line('Media notelor este: ' || v_medie);
+--    daca media e sub 7, afisam un mesaj
+    if v_medie > 9 then
+        dbms_output.put_line('Studentul este premiat');
+    elsif v_medie > 7 then
+        dbms_output.put_line('Studentul este promovat');
+    else
+        dbms_output.put_line('Studentul nu este promovat');
+    end if;
+end;

@@ -1,0 +1,171 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="290251DF-456A-35A3-85B0-97A629F704E7" name="concursuri_olimpiade">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>F801CB12-8EAB-60CF-978A-4A84FCCA4557</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_concurs_olimpiada" id="00851A1B-A87C-3996-936E-35C88D5BBDE8">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>A654FF19-4A4D-C599-CB1C-F4F9A8A7A175</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tip_premiu_obtinut" id="661EF095-AABC-9D79-ADCF-7248169B9F99">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>D89F5A73-CC31-BDC1-16F8-0645EA7BA866</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="punctaj_acumulat" id="3288F743-6045-172E-5F29-3FC724243A30">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>A5518BE9-D3A7-7D76-7C6D-BD0DA5AF5866</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="elevi_id_elev" id="CD6F6C29-94BF-E9A8-D99F-1900E173D314">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>74DD0238-93CF-4E36-0C35-EE19A1B8ED3F</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3337B9E0-45D1-28D9-C588-36F613005F65" referredColumn="3DB9AC24-854C-E5F2-1002-EE9A49C4D3C3"/>
+</associations>
+</Column>
+<Column name="elevi_cod_activitate" id="FF4A9360-33C2-9ED2-4581-2F84055E3B99">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>0A1AAA6B-20F3-F26B-B377-C8A150E71C5E</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3337B9E0-45D1-28D9-C588-36F613005F65" referredColumn="43722C1B-8A21-77A4-B669-CC3CF3176A5B"/>
+</associations>
+</Column>
+<Column name="elevi_cod_bursa" id="CB66FB2F-99EC-85C1-7E19-79E3A1CEDA35">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>8228A8AC-0D66-8232-CC7F-B632216BE4ED</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3337B9E0-45D1-28D9-C588-36F613005F65" referredColumn="5F0CCD32-FCB7-1177-09D2-8D7465D2FD33"/>
+</associations>
+</Column>
+<Column name="elevi_an_clasa" id="660A39F4-70EA-3CB8-B952-FA035189DB25">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>1F8F8F6E-3C45-018F-CA41-689C20594774</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3337B9E0-45D1-28D9-C588-36F613005F65" referredColumn="F5F89D48-AFB8-6D49-03AA-F1F133850046"/>
+</associations>
+</Column>
+<Column name="elevi_grupa_clasa" id="DD9D8799-B4DF-CAE3-7937-19F81D87D060">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>320A3324-F112-6354-2232-6D8E3D14C70E</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3337B9E0-45D1-28D9-C588-36F613005F65" referredColumn="8F34E338-578A-B54E-E0F4-5AA388113EB8"/>
+</associations>
+</Column>
+<Column name="elevi_cod_profil" id="992286A6-D81B-DF5D-D957-57AFE8FD4909">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>33B8434B-4B56-3069-4D1F-F8A391A1CC32</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3337B9E0-45D1-28D9-C588-36F613005F65" referredColumn="BFCE5AEB-8547-7D82-8F64-9A310D76997E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="77AC2C21-C0B8-6BBF-526A-23E507FFD945" name="concursuri_olimpiade_PK">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>F433270F-2095-3439-6F86-E770798ACDD3</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="00851A1B-A87C-3996-936E-35C88D5BBDE8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A37AD4F4-6D74-A113-CB6C-02C62371F438" name="concursuri_olimpiade_elevi_FK">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:54 UTC</createdTime>
+<generatorID>F01DF00E-6BFD-C77F-2718-DB8EC7A442C1</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CD6F6C29-94BF-E9A8-D99F-1900E173D314"/>
+<colUsage columnID="FF4A9360-33C2-9ED2-4581-2F84055E3B99"/>
+<colUsage columnID="CB66FB2F-99EC-85C1-7E19-79E3A1CEDA35"/>
+<colUsage columnID="660A39F4-70EA-3CB8-B952-FA035189DB25"/>
+<colUsage columnID="DD9D8799-B4DF-CAE3-7937-19F81D87D060"/>
+<colUsage columnID="992286A6-D81B-DF5D-D957-57AFE8FD4909"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

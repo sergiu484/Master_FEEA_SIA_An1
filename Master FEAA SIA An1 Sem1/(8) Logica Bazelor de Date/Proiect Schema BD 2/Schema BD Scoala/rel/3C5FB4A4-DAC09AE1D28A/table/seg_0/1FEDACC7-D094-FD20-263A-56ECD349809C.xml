@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1FEDACC7-D094-FD20-263A-56ECD349809C" name="activitati_de_dezvoltare">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>3AF74A12-7697-E4FC-0B53-B8F5D8F6BB35</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cod_activitate" id="722FE0C3-981F-7A6B-39CF-6E4A0A4A65F6">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>813DF563-B13D-9ADC-5914-664476917F8A</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="denumire_activitate" id="34726ED4-A782-E69C-AC00-6614EBA5CC57">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>820D0EF0-7D0F-04B5-5E09-6ACD1D4595DA</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="capacitate_activitate" id="9CC35EDA-2820-2F62-0198-E783A6874C1C">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>BF99C151-3B43-2E9E-2C40-F83BE71C6AE6</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DA375BAA-9B1D-E7EE-57AB-A957CCA802D6" name="activitati_de_dezvoltare_PK">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>BCFCA12C-D370-4E92-B707-8ADA138A5DE9</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="722FE0C3-981F-7A6B-39CF-6E4A0A4A65F6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

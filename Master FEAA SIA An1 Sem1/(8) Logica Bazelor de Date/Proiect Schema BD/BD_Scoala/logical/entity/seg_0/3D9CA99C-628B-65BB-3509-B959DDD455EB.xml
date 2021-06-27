@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3D9CA99C-628B-65BB-3509-B959DDD455EB" name="Elev">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-10 19:44:53 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<preferredAbbreviation>Elevi</preferredAbbreviation>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_elev" id="4108E0BF-3B9B-C3A3-69BB-37B584474C49">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-10 19:48:24 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nume_prenume_elev" id="70A73683-8F22-30FD-E018-FC85D0AB823B">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-10 19:48:32 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="telefon" id="C97CF32F-08B7-3208-CC33-3F1AEC3BA463">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-10 20:04:18 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email" id="C3EEBBDB-FABD-273C-1D17-2E0664AAC2BC">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-10 20:04:32 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cod_activitate" id="7E65468D-AD78-FF28-6790-73907C23905A">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-10 20:30:53 UTC</createdTime>
+<generatorID>A50C2619-EE64-8D2F-62E2-6457353A77C5</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<referedAttribute>BE19582D-BC31-039E-2D5D-33A88C376F50</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_nasterii" id="F31E8C83-BC89-47C7-3CAD-643398DF50D7">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-11 13:02:25 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cod_bursa" id="111CA587-5815-98C2-136D-D0760F5C0844">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-11 18:47:31 UTC</createdTime>
+<generatorID>F9C14C9E-A4FE-E9CD-997F-DA69AB7AFFD3</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<referedAttribute>D18000C6-3ABC-B1E2-3C5E-3A4A102F7949</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cod_profil" id="BFB02012-1EEC-DA4A-AD69-C8DF73C72D50">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:23:18 UTC</createdTime>
+<generatorID>09C7EBF6-B0D0-31F2-37FA-9B33BF7B0564</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<referedAttribute>1AE88DAA-295A-421C-0480-BCA2B8DA74CE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1BEFA31C-77E0-D913-8C6E-0D034365E8CC" name="Elev PK">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-10 20:04:09 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4108E0BF-3B9B-C3A3-69BB-37B584474C49</attributeRef>
+<attributeRef>BFB02012-1EEC-DA4A-AD69-C8DF73C72D50</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

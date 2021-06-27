@@ -1,0 +1,301 @@
+-- 1. Declareare, asignare, extragere date, afisare 
+declare
+    v_nr_matricol integer := 113;
+    v_bursa number;
+    v_nume varchar2(20);
+    v_prenume varchar2(20);
+    v_nota number;
+begin
+    select bursa into v_bursa from studenti where nr_matricol = v_nr_matricol;
+    DBMS_OUTPUT.put_line('Bursa studentului este: ' || v_bursa);
+    select nume,prenume into v_nume,v_prenume from studenti where nr_matricol = v_nr_matricol;
+    DBMS_OUTPUT.put_line('Numele studentului este: ' || v_nume || ' ' || v_prenume);
+    select max(valoare) into v_nota from note where nr_matricol = v_nr_matricol;
+    DBMS_OUTPUT.put_line('Ce mai mare nota a studentului este: ' || v_nota);
+end;
+-------------------- Exercitii seminar 1 Grupa 1 --------------------------------------
+	-- 1. Afiseze cati studenti sunt inscrisi in fiecare an de studii;
+set serveroutput on
+begin
+    for cx in (select an, count(*) as nrStudenti from studenti group by an order by an) loop
+        dbms_output.put_line('In anul '|| cx.an || ' sunt ' || cx.nrStudenti || ' studenti.' );
+    end loop;
+end;
+ 
+	-- 2. Afiseze toti studentii bursieri; studentului cu cea mai mare bursa mai adaugati-i 100 de lei;
+set serveroutput on
+declare
+    v_bursamaxima number;
+begin
+    select max(bursa) into v_bursamaxima from studenti;
+    for cx in (select nume, bursa from studenti where bursa is not null) loop
+        if cx.bursa = v_bursamaxima then
+            dbms_output.put_line('Studentul' || cx.nume ||' are bursa ' || to_char(cx.bursa + 100));
+        else 
+            dbms_output.put_line('Studentul' || cx.nume ||' are bursa ' || cx.bursa);
+        end if;
+    end loop;
+end;
+
+	-- 3. Afiseze toate notele la disciplina BD, inclusiv numele studentilor; adaugati o coloana status cu valorile “promovat” pentru note peste 5 si “nepromovat” pentru note sub 5;
+begin 
+    for i in (select s.nume, s.prenume, n.valoare from studenti s join note n on s.nr_matricol = n.nr_matricol join cursuri c 
+    on c.id_curs = n.id_curs where c.titlu_curs = 'BD' and n.valoare >= 5) loop
+        dbms_output.put_line('Studentul '||i.nume || ' este promovat');
+    end loop;
+    for i in (select s.nume, s.prenume, n.valoare from studenti s join note n on s.nr_matricol = n.nr_matricol join cursuri c 
+    on c.id_curs = n.id_curs where c.titlu_curs = 'BD' and n.valoare < 5) loop
+        dbms_output.put_line('Studentul '||i.nume || ' este promovat');
+    end loop;
+end;	
+
+? -- 4. Afiseze notele celui mai bun student din facultate care are macar trei note si materiile la care le-a luat. 
+? -- Daca sunt doi studenti care au aceeasi medie va fi afisat cel din an mai mare sau, in cazul in care sunt in acelasi an,
+? -- vor fi afisate notele primului in ordine alfabetica.
+BEGIN
+	FOR i IN 
+		(SELECT valoare, s.nr_matricol, s.nume, c.titlu_curs FROM studenti s JOIN note n ON s.nr_matricol = n.nr_matricol JOIN cursuri c 
+        ON c.id_curs = n.id_curs WHERE s.nr_matricol IN 
+            (SELECT s.nr_matricol FROM studenti s JOIN note n ON s.nr_matricol = n.nr_matricol JOIN cursuri c ON c.id_curs = n.id_curs 
+            GROUP BY s.nr_matricol HAVING AVG(n.valoare) = 
+                (SELECT MAX(medianotelor) FROM 
+                    (SELECT AVG(valoare) medianotelor FROM studenti s JOIN note n ON 
+                    s.nr_matricol = n.nr_matricol GROUP BY s.nr_matricol HAVING COUNT(*) >= 3))))
+	LOOP
+		DBMS_OUTPUT.PUT_LINE(i.valoare||' '||i.nume || ' are note la ' || i.titlu_curs);
+	END LOOP;
+END;
+-------------------- Exercitii seminar 2 Grupa 2 --------------------------------------
+
+---------------------------- Exemple de loop in PL/SQL ----------------------------------
+set serveroutput on
+declare
+    x number := 10;
+begin
+    loop 
+        dbms_output.put_line(x);
+        x := x + 10;
+        exit when x > 30;
+    end loop;
+    dbms_output.put_line('After exit x is: '|| x);
+end;
+/
+declare
+    a number(2) := 10;
+begin
+    while a < 15 loop
+        dbms_output.put_line('value of a: ' || a);
+        a := a + 1;
+    end loop;
+end;
+/ 
+declare
+    a number(2);
+begin 
+    for a in 10 .. 15 loop
+        dbms_output.put_line('value of a: ' || a);
+    end loop;
+end;
+
+
+-- Exemplu Ex 2 Afisati cea mai mica nota
+declare
+    v_nota_minima integer := 10;
+begin
+    for c in (select valoare from note where id_curs = 21) loop
+        if c.valoare < v_nota_minima then
+            v_nota_minima := c.valoare;
+        end if;
+        dbms_output.put_line(c.valoare);
+    end loop;
+    dbms_output.put_line('Cea mai mica nota a fost ' || v_nota_minima);
+end;
+
+-----------------------------------------------------Proceduri------------------------------------
+set serveroutput on
+create or replace procedure salut as
+    v_mesaj varchar2(100) := 'Hello World!';
+begin
+    v_mesaj := 'abc';
+    dbms_output.put_line(v_mesaj);
+end;
+
+--select * from user_objects where object_name = 'SALUT';
+
+begin
+    salut;
+end;
+---------------------------------------------------------------
+-- procedura cu 1 singur parametru
+select * from user_objects where object_name = 'MESAJ';
+
+create or replace procedure mesaj(pi_mesaj varchar2) as
+begin
+    dbms_output.put_line(pi_mesaj);
+end;
+
+begin 
+    mesaj('Mesaj');
+end;
+
+-------------------------------------------------------------
+--procedura cu 2 parametri
+create or replace procedure adunare(pi_numar1 integer, pi_numar2 integer) as
+    v_suma integer;
+begin
+    v_suma := pi_numar1 + pi_numar2;
+    dbms_output.put_line(v_suma);
+end;
+
+select * from user_objects where object_name = upper('adunare');
+
+begin
+    adunare(1,2);
+end;
+
+--------------------------------------------------------------
+-- 2 sau mai multi parametri de intrare + parametri de iesire
+create or replace procedure adunare2(pi_numar1 in integer, pi_numar2 in integer, po_suma out integer) as
+begin
+    po_suma := pi_numar1 + pi_numar2;
+end;
+select * from user_objects where object_name = upper('adunare2');
+
+declare
+    v_suma integer;
+begin
+    adunare2(1, 2, v_suma);
+    dbms_output.put_line(v_suma);
+end;
+-------------------- Exercitii seminar 3 Grupa 1 --------------------------------------
+
+--1. Creati o procedura in care sa parcurgeti notele fiecarui student din anul 2. In interiorul LOOP-uui verificati cate note de 10 
+--a avut fiecare student si afisati numele lui si numarul notelor de 10;
+
+create or replace procedure note_de_10_studenti_an_2 as
+	v_nume varchar2(100);
+	v_note_de_10 integer;
+begin
+	FOR t IN (select s.nume, count(n.valoare) as note_de_10 from studenti s inner join note n on n.nr_matricol = s.nr_matricol where s.an = 2 group by s.nume) LOOP
+		dbms_output.put_line('Studentul ' || t.nume || ' are '|| t.note_de_10 || ' note de 10.');
+	END LOOP;
+end;
+
+-- testare
+
+begin
+	note_de_10_studenti_an_2;
+end;
+
+
+--2. Creati o procedura care sa dubleze prin update bursa unui student (dat prin ID). Daca valoarea bursei dupa modificare este 
+--mai mare de 600, ea va fi limitata la 600 si se va notifica acest lucru;
+
+create or replace procedure update_bursa_student (pi_matricol number) as
+    v_bursa number;
+begin
+    select bursa into v_bursa from studenti where nr_matricol = pi_matricol;
+    if v_bursa * 2 > 600 then
+        dbms_output.put_line('Bursa maxima este 600');
+        v_bursa := 600;
+    elsif v_bursa > 0 and v_bursa * 2 >= 600 then 
+        dbms_output.put_line('Bursa a fost marita');
+        v_bursa := v_bursa * 2;
+    else
+        dbms_output.put_line('Bursa este 0');
+    end if;
+    update studenti set bursa = v_bursa where nr_matricol = pi_matricol;
+end;
+
+begin 
+    update_bursa_student(111); 
+end;
+
+set serveroutput on
+
+--3. Creati o functie care sa primeasca drept parametru id-ul unui profesor si sa returneze numarul de cursuri predate
+--de acel profesor (folositi tabela Didactic); apelati functia in LOOP intr-o procedura care va calcula apoi care este 
+--cel sau care sunt cei care predau cele mai multe cursuri si ii sau le va schimba gradul didactic in “Super”.
+
+create or replace function nr_de_cursuri (v_id VARCHAR2) return number as
+    v_nrcursuri number;
+begin
+    select count(*) into v_nrcursuri from didactic where id_prof = v_id;
+    return v_nrcursuri;
+end;
+
+begin
+    dbms_output.put_line(nr_de_cursuri('p1  ')); 
+end;
+
+-- 4) Cautarea grupei, numelui, a prenumelui, respectiv bursa studentului cu nr. matricol 113
+set serveroutput on
+declare
+    v_matricol_student integer := 113;
+    v_grupa_student varchar2(10);
+    v_nume_student varchar2(30);
+    v_prenume_student varchar2(30);
+    v_bursa_valoare numeric;
+begin
+    select nume, prenume, bursa, grupa into v_nume_student, v_prenume_student, v_bursa_valoare, v_grupa_student from studenti where nr_matricol = v_matricol_student;
+    dbms_output.put_line('Studentul aflat in grupa ' || v_grupa_student || ' cu numele ' || v_nume_student || ' ' || v_prenume_student || ' are o bursa in valoare de: ' || v_bursa_valoare);
+end;
+
+-------------------- Exercitii seminar 3 Grupa 1 --------------------------------------
+
+-----------------------Exemplu 1-------------------------------------
+--select * from note where nr_matricol = 111;
+
+create or replace procedure sterge_note_student (pi_matricol integer) as
+    v_numar_note integer;
+    v_nume_student varchar2(100);
+begin
+    select nume into v_nume_student from studenti where nr_matricol = pi_matricol;
+    select count(*) into v_numar_note from note where nr_matricol = pi_matricol;
+    dbms_output.put_line('Studentul are '|| v_numar_note || ' note. Vor fi sterse.');
+    delete from note where nr_matricol = pi_matricol;
+end;
+--select object_name, object_type, status from user_objects where object_name = upper('sterge_note_student');
+begin 
+    sterge_note_student(111); 
+end;
+
+-----------------------Exemplu 2-------------------------------------
+create or replace function medie_student(pi_matricol integer) return number as
+    v_medie number;
+begin
+    select round(avg(valoare),2) into v_medie from note where nr_matricol = pi_matricol;
+    return v_medie;
+end;
+
+--select object_name, object_type, status from user_objects where object_name =upper('medie_student');
+
+declare 
+    v_medie number;
+begin
+    v_medie := medie_student(112);
+    dbms_output.put_line(v_medie);
+end;
+
+select nr_matricol, nume, medie_student(nr_matricol) from studenti;
+
+
+
+------------------------------ Creare pachete --------------------------------------------------------
+set serveroutput on
+create or replace package pachet_studenti as
+    procedure afla_nume_student(pi_matricol integer);
+end;
+
+create or replace package body pachet_studenti as
+    procedure afla_nume_student(pi_matricol integer) as
+        v_nume varchar2(100);        
+    begin
+        select nume into v_nume from studenti where nr_matricol = pi_matricol;
+        dbms_output.put_line(v_nume);   
+    end;
+end;
+
+begin
+    pachet_studenti.afla_nume_student(111);
+end;

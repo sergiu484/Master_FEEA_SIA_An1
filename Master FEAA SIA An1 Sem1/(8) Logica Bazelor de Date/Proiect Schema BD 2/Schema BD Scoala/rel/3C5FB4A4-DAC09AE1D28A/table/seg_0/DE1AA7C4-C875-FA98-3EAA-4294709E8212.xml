@@ -1,0 +1,204 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DE1AA7C4-C875-FA98-3EAA-4294709E8212" name="elevi">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>414A075F-B394-A918-E48B-E9F01BBD8ACF</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_elev" id="3DB9AC24-854C-E5F2-1002-EE9A49C4D3C3">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>46281B63-5546-C39B-DBB8-9CF5A7AEED99</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nume_prenume_elev" id="A341DE62-3A95-1CA6-19AD-D62A49AF8DCD">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>99A29BB0-2430-F032-E7E8-0DE6E08F500E</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="telefon" id="32EABF23-C94D-B70A-417F-5A240742B7E4">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>B9C2A158-AC2B-BFE2-4D9B-AE368556A3E4</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="3FB6C954-648D-4552-6F3E-CD5AD9EBD713">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>1FDA3696-DBE4-410D-37E0-9F576484531D</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_nasterii" id="D480B028-15DE-BBAE-BE07-C8A09C31F692">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>4E66518F-AE37-96DD-99F5-C356ACB85B1E</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="activitati_de_dezvoltare_cod_activitate" id="43722C1B-8A21-77A4-B669-CC3CF3176A5B">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>8CB5518B-C239-5DD2-B620-49EF9A17C8BB</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BBBDEA5A-DCC9-42C1-BF68-5E6F626CF107" referredColumn="722FE0C3-981F-7A6B-39CF-6E4A0A4A65F6"/>
+</associations>
+</Column>
+<Column name="burse_cod_bursa" id="5F0CCD32-FCB7-1177-09D2-8D7465D2FD33">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>61763EA7-0235-293D-6B8C-B5563B8DB23E</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="72312BE7-018C-DE13-9052-167D634AF7B4" referredColumn="26311EE1-47A0-E841-7A6B-D5580687D8BE"/>
+</associations>
+</Column>
+<Column name="clase_an_clasa" id="F5F89D48-AFB8-6D49-03AA-F1F133850046">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>BF66246A-6F1B-ADDD-D189-2BDD5533B23F</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C107ADF6-C5CE-0E63-6AD7-02E9E8164BE9" referredColumn="CEC38A1D-5524-F70C-E96A-562CA8DDF928"/>
+</associations>
+</Column>
+<Column name="clase_grupa_clasa" id="8F34E338-578A-B54E-E0F4-5AA388113EB8">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>06468476-6CB8-77B9-CB8A-35C2A8EECDF4</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C107ADF6-C5CE-0E63-6AD7-02E9E8164BE9" referredColumn="54115291-E53A-89C1-259B-3A81649D290E"/>
+</associations>
+</Column>
+<Column name="clase_cod_profil" id="BFCE5AEB-8547-7D82-8F64-9A310D76997E">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>4EA3228E-4666-C71A-C5BE-963CFDDBF081</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C107ADF6-C5CE-0E63-6AD7-02E9E8164BE9" referredColumn="D24799E1-CEEB-3C56-1C8D-685EC6DF86A6"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6992E785-8057-66C7-1F5D-3AADE65D6969" name="elevi_PK">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>063A32E8-EB1D-6B35-002F-B150A16D0D92</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3DB9AC24-854C-E5F2-1002-EE9A49C4D3C3"/>
+<colUsage columnID="43722C1B-8A21-77A4-B669-CC3CF3176A5B"/>
+<colUsage columnID="5F0CCD32-FCB7-1177-09D2-8D7465D2FD33"/>
+<colUsage columnID="F5F89D48-AFB8-6D49-03AA-F1F133850046"/>
+<colUsage columnID="8F34E338-578A-B54E-E0F4-5AA388113EB8"/>
+<colUsage columnID="BFCE5AEB-8547-7D82-8F64-9A310D76997E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="09B119AB-286D-3945-F3A4-F4274D88B4F4" name="elevi_activitati_de_dezvoltare_FK">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:54 UTC</createdTime>
+<generatorID>5161A25A-093F-B3EB-219B-F2179BE879FD</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="43722C1B-8A21-77A4-B669-CC3CF3176A5B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FB0C4058-494E-E3E2-BC5D-92E955484524" name="elevi_burse_FK">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:54 UTC</createdTime>
+<generatorID>4676AA59-6B51-538D-20EA-0F9C6CD966CE</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5F0CCD32-FCB7-1177-09D2-8D7465D2FD33"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4EA74145-11B3-7454-CD7E-B58D97904565" name="elevi_clase_FK">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:54 UTC</createdTime>
+<generatorID>D6DCEA78-E3ED-614D-E8EA-54E7CD61F796</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F5F89D48-AFB8-6D49-03AA-F1F133850046"/>
+<colUsage columnID="8F34E338-578A-B54E-E0F4-5AA388113EB8"/>
+<colUsage columnID="BFCE5AEB-8547-7D82-8F64-9A310D76997E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F7C2565C-D526-1368-1F6F-D8D455AEC585" name="Piesa">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:23:46 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<preferredAbbreviation>Piese</preferredAbbreviation>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IdPiesa" id="590FBCF4-D467-6988-D5E5-363DC01EE727">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:23:57 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdAutorPiesa" id="CA972F60-9DCE-8EE4-427C-338FEAE8077C">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:24:09 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DataPrimaPublicarePiesa" id="08351D6B-F540-94B1-2916-A1B7A0A4331A">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:24:22 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TaraPrimaPublicarePiesa" id="5465B570-57F3-0E71-8550-E7A83C7A4DC6">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:24:43 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdRegizor" id="C8FE0896-1700-9975-626F-9A3407071EAB">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:48:37 UTC</createdTime>
+<generatorID>618002B6-531F-EC57-9058-BC01BBE05E10</generatorID>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<referedAttribute>8EF3410E-9A49-ABBB-BE14-EA8941B8C095</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdMontare" id="E3B444C7-D249-B856-A16A-C973B2AE1408">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 15:25:01 UTC</createdTime>
+<generatorID>4AF1F036-7F7B-0CD4-05D2-2D971AC8DF59</generatorID>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<referedAttribute>67D83B85-076D-12B4-FAE1-55A72A40C515</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C8C6A7D0-F839-3749-3001-DEF77FF79F05" name="Piesa PK">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:24:08 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>590FBCF4-D467-6988-D5E5-363DC01EE727</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

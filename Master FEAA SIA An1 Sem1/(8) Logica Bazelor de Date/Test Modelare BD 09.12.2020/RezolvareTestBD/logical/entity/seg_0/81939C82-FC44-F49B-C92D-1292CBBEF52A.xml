@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="81939C82-FC44-F49B-C92D-1292CBBEF52A" name="Client">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:32:53 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<preferredAbbreviation>Clienti</preferredAbbreviation>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="CodClient" id="28C7870C-A545-8A49-8473-3F763E17AADC">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:33:02 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NumeClient" id="6A734E55-E507-3222-D429-A51CECD66B11">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:33:16 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TelefonClient" id="DA2A605E-2011-5AED-3DA9-3055571E9FA7">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:33:26 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="EmailClient" id="B48FCC9C-351E-157B-5A80-33F02280E242">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:33:38 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdPersoana1" id="4C5CDDBF-AC52-C0D9-9EE0-D990D30A8686">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 15:15:07 UTC</createdTime>
+<generatorID>146B4D6E-8AAD-EA55-A453-D49895470724</generatorID>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<referedAttribute>20725833-5013-B1B6-5F77-1C55D362A071</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A60477D5-9C20-5E4E-83A6-F834C055833B" name="Client PK">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:33:15 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>28C7870C-A545-8A49-8473-3F763E17AADC</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

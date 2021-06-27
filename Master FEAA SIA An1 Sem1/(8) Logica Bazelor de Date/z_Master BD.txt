@@ -1,0 +1,6 @@
+	1. Prezentare ppt 1
+		https://github.com/marinfotache/Database-Logic-in-Business-Applications/blob/master/02_Basics%20of%20PL%20SQL/02-01_en_Introduction%20to%20PL%20SQL.pptx
+	2. Prezentare ppt 2
+		https://github.com/marinfotache/Database-Logic-in-Business-Applications/blob/master/02_Basics%20of%20PL%20SQL/02-02_en_Procedures_functions_SELECT_exceptions_cursors.pptx
+	3. Prezentare ppt 3
+		https://github.com/marinfotache/Database-Logic-in-Business-Applications/blob/master/02_Basics%20of%20PL%20SQL/02-03_en_Packages.pptxs

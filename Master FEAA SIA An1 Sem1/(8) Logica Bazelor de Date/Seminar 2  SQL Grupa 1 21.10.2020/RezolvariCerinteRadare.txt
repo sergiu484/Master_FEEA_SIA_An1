@@ -1,0 +1,153 @@
+select * from vehicule
+select * from soferi
+select * from contraventii
+
+select * from 
+contraventii c join soferi s on c.idsofer = s.idsofer join vehicule v on c.idvehicul = v.idveh
+
+-- 1. Ce masini cu motorul mai mare de 4000 cc au fost inmatriculate in localitatea Flamanzi, jud. Botosani (BT)?
+select * from vehicule
+select * from localitati
+
+select v.nrinmatr, v.model 
+from vehicule v join localitati l on v.idlocinmatr = l.idloc where v.capcilindr > 4000 and l.denloc = 'Flamanzi' and l.jud = 'BT'
+
+select v.nrinmatr, v.model 
+from vehicule v join localitati l on v.idlocinmatr = l.idloc where v.capcilindr > 4000 and l.denloc like 'Flam%' and l.jud like 'BT%'
+
+-- 2. In cate contraventii diferenta dintre viteza efectiva si cea legala a fost mai mare de 50 km/h?
+select * 
+from contraventii_viteza
+
+select count(*) 
+from contraventii_viteza where vitezaefectiva - vitmaxlegala > 50
+
+-- 3. Top 5 soferi cu cele mai multe contraventii
+select s.numesofer, count(*) as nrAmenzi
+from soferi s join contraventii c on s.idsofer = c.idsofer
+group by s.numesofer
+order by 2 desc
+fetch first 5 rows only
+
+select numesofer, nramenzi from (
+    select s.numesofer, count(*) as nrAmenzi
+    from soferi s join contraventii c on s.idsofer = c.idsofer
+    group by s.numesofer
+    order by 2 desc)
+        where rownum <= 5
+    
+-- 4.1. Care sunt cele 2 județe în care s-au înregistrat cele mai multe depășiri de viteză în anul 2009?
+select * from localitati
+select * from contraventii
+select * from contraventii_viteza
+
+select * from localitati l join contraventii c on l.idloc = c.idloccontr
+select * from contraventii c join contraventii_viteza cv on c.idcontr = cv.idcont
+
+select l.jud, count(*) as numardepasiri
+from localitati l join contraventii c on l.idloc = c.idloccontr join contraventii_viteza cv on c.idcontr = cv.idcont 
+where 
+extract(year from c.datacontr) = 2009
+--datacontr like '%09'
+group by l.jud
+
+-- 4.2. Care este județul în care s-au înregistrat cele mai multe depășiri de viteză în anul 2009?
+select l.jud, count(*) as nrdepasiri
+from localitati l join contraventii c on l.idloc = c.idloccontr join contraventii_viteza cv on c.idcontr = cv.idcont 
+where 
+extract(year from c.datacontr) = 2009
+--datacontr like '%09'
+group by l.jud
+order by nrdepasiri
+fetch first row only
+
+-- 5. Ce conducători auto au comis contravenții și în localitatea Pocreaca și în localitatea Adjud?
+
+select * from soferi
+select * from localitati
+select * from contraventii
+
+select s.numesofer
+from soferi s join contraventii c on s.idsofer = c.idsofer join localitati l on l.idloc = c.idloccontr
+where l.denloc = 'Pocreaca'
+intersect
+select s.numesofer
+from soferi s join contraventii c on s.idsofer = c.idsofer join localitati l on l.idloc = c.idloccontr
+where l.denloc = 'Adjud'
+
+select numesofer 
+from soferi 
+where numesofer in
+    (select s.numesofer
+    from soferi s join contraventii c on s.idsofer = c.idsofer join localitati l on l.idloc = c.idloccontr
+    where l.denloc = 'Pocreaca')
+    and numesofer in
+    (select s.numesofer
+    from soferi s join contraventii c on s.idsofer = c.idsofer join localitati l on l.idloc = c.idloccontr
+    where l.denloc = 'Adjud')
+    
+    
+-- 6. Care este valoarea medie a amenzilor pe 2009 înregistrate în localitățile județului Vrancea (VN)?
+select * from localitati
+select * from contraventii
+
+select round(avg(valamenda),2) mediaamenzi
+from localitati l join contraventii c on l.idloc = c.idloccontr
+where datacontr like '%09' and jud = 'VN'
+
+-- Media amenzilor pe fiecare judet
+select jud, round(avg(valamenda),2) mediaamenzi
+from localitati l join contraventii c on l.idloc = c.idloccontr
+where datacontr like '%09'
+group by jud;
+
+-- 7. Care sunt localitățile în care s-au înregistrat mai multe contravenții decât în loc. Traian, jud. Neamț?
+select * from localitati;
+select * from contraventii;
+
+select denloc, count(*) as nrcontr
+from localitati l join contraventii c on l.idloc = c.idloccontr
+group by denloc
+having count(*) > 
+    (select count(*) 
+    from contraventii c join localitati l on c.idloccontr = l.idloc
+    where denloc = 'Traian')
+
+-- 8. Care sunt modelele de autovehicule care au toate capacitățile cilindrice mai mici de 3000 cc
+select * from vehicule
+
+select distinct(model) 
+from vehicule 
+where model not in
+    (select model from vehicule where capcilindr >= 3000)
+
+-- 9. Ce șoferi și-au achitat total contravențiile din 2015?
+select * from soferi
+select * from contraventii
+select * from plati_amenzi
+
+select numesofer, sum(valamenda) as totalamenzi
+from soferi s join contraventii c on s.idsofer = c.idsofer join plati_amenzi pa on c.idcontr = pa.idcontr 
+where extract(year from datacontr) = 2015
+group by numesofer
+having sum(valamenda) =
+    (select sum(valoareplata)
+    from plati_amenzi pa join contraventii c on pa.idcontr = c.idcontr join soferi s on c.idsofer = s.idsofer
+    where extract(year from datacontr) = 2015)
+
+-- 10. Ce șoferi au fost amendați în măcar localitățile în care a fost amendat Manetă Gheorghe?
+select * from soferi
+select * from contraventii
+select * from localitati
+
+select numesofer, count(distinct denloc)
+from soferi s join contraventii c on s.idsofer = c.idsofer join localitati l on c.idloccontr = l.idloc 
+where denloc in (
+        select distinct(denloc) 
+        from soferi s join contraventii c on s.idsofer = c.idsofer join localitati l on c.idloccontr = l.idloc 
+        where numesofer = 'Maneta Gheorghe')
+    and numesofer <> 'Maneta Gheorghe'
+    group by numesofer
+    having count(distinct denloc) >= (select count(distinct(denloc)) 
+        from soferi s join contraventii c on s.idsofer = c.idsofer join localitati l on c.idloccontr = l.idloc 
+        where numesofer = 'Maneta Gheorghe')

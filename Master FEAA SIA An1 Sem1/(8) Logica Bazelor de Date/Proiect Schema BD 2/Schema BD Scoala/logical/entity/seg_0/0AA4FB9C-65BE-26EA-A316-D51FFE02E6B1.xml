@@ -1,0 +1,131 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0AA4FB9C-65BE-26EA-A316-D51FFE02E6B1" name="clasa">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 15:07:49 UTC</createdTime>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<engineerTo>
+<item key="3C5FB4A4-63FE-7DEA-CC3E-DAC09AE1D28A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<preferredAbbreviation>clase</preferredAbbreviation>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="an_clasa" id="215B2575-30DD-C95D-482B-55FC1B429DC7">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 15:08:02 UTC</createdTime>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<engineerTo>
+<item key="3C5FB4A4-63FE-7DEA-CC3E-DAC09AE1D28A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="grupa_clasa" id="7D5C5A52-2398-8E0B-AFD8-A60FFAE07C1C">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 15:08:53 UTC</createdTime>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<engineerTo>
+<item key="3C5FB4A4-63FE-7DEA-CC3E-DAC09AE1D28A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="capacitate_clasa" id="38728B3E-2089-C12F-F05F-589F0C50DF05">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 15:08:53 UTC</createdTime>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<engineerTo>
+<item key="3C5FB4A4-63FE-7DEA-CC3E-DAC09AE1D28A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cod_profil" id="1146B45B-C473-B4EF-51A7-5F583E91143B">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 15:40:52 UTC</createdTime>
+<generatorID>9E98B1B5-808D-F42C-8AA4-577A9062AA6B</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<engineerTo>
+<item key="3C5FB4A4-63FE-7DEA-CC3E-DAC09AE1D28A" value="true"/>
+</engineerTo>
+<referedAttribute>6A75DADE-39B4-91F8-AD05-A6DFCF1D653A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cod_catalog " id="9894BE13-9442-A92F-88C5-10B0D8124E0D">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 15:41:33 UTC</createdTime>
+<generatorID>5239477C-C4F4-78D0-209B-6AF6CDB1F147</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<engineerTo>
+<item key="3C5FB4A4-63FE-7DEA-CC3E-DAC09AE1D28A" value="true"/>
+</engineerTo>
+<referedAttribute>DC59B305-63DC-C81C-63EB-87C61D0BD674</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="an_scolar" id="F150F32F-F704-E0F4-4421-902716B6D6BD">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 15:42:26 UTC</createdTime>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<engineerTo>
+<item key="3C5FB4A4-63FE-7DEA-CC3E-DAC09AE1D28A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_disciplina" id="1B40C5F1-1AF8-EFAD-E28C-6BB93ED83A8F">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 15:57:14 UTC</createdTime>
+<generatorID>8AAE838E-792F-B210-222F-346C20A80C44</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<engineerTo>
+<item key="3C5FB4A4-63FE-7DEA-CC3E-DAC09AE1D28A" value="true"/>
+</engineerTo>
+<referedAttribute>6CBFAE60-DD63-4175-9DBC-1AF1FB1AB4E9</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="89CA6115-22FA-C0F7-5368-8E5CAFCC6859" name="clasa PK">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 15:09:31 UTC</createdTime>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<engineerTo>
+<item key="3C5FB4A4-63FE-7DEA-CC3E-DAC09AE1D28A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>215B2575-30DD-C95D-482B-55FC1B429DC7</attributeRef>
+<attributeRef>7D5C5A52-2398-8E0B-AFD8-A60FFAE07C1C</attributeRef>
+<attributeRef>1146B45B-C473-B4EF-51A7-5F583E91143B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

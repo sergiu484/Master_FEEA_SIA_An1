@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1FD6A3A5-E793-780E-FBA5-92DF4336D9E4" name="concursuri">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>021C329D-C5CA-014F-5B76-DBEAEA4B73B1</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nume_concurs" id="FECFA889-3EC3-E2CC-E2E7-045BF8FAEB45">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>107CCCC1-7E97-08AD-64B3-E6B2178F5F7C</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="materie_testata" id="29687415-158C-A09D-420A-65C5AC67BA3A">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>5EFA594F-46A1-9632-5B15-778ACE17470B</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="perioada" id="7C8C89A4-D14A-33CD-5D2B-77D0F70C2E93">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>5CA23929-358B-AAB0-4BD6-D24B2E2FF89E</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="concursuri_olimpiade_id_concurs_olimpiada" id="DC4F5561-5640-2831-1B2B-98037140A4C0">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>5288F322-B84C-3859-291A-413936B3B8D9</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="18496AA3-8B0A-3C12-7BBD-841710C2465D" referredColumn="00851A1B-A87C-3996-936E-35C88D5BBDE8"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F19D5711-E029-D65E-7B54-3D574293E215" name="concursuri_PK">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>6EB9D40C-F0D3-E3F8-31F8-A576CEFD767E</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="8815B85F-FBFF-3303-F0BB-8B85AE94F2F6" name="concursuri_concursuri_olimpiade_FK">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:54 UTC</createdTime>
+<generatorID>7CCD95FB-844B-D7FF-567D-4CB341BC4E17</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DC4F5561-5640-2831-1B2B-98037140A4C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

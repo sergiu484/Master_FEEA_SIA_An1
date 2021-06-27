@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B1179FFF-7D8D-F62C-0076-F1B7044101DC" name="disciplina">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 15:20:47 UTC</createdTime>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<engineerTo>
+<item key="3C5FB4A4-63FE-7DEA-CC3E-DAC09AE1D28A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<preferredAbbreviation>discipline</preferredAbbreviation>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_discplina" id="5A20835C-8BAA-34BB-FC37-1E2B0DA661AB">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 15:21:05 UTC</createdTime>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<engineerTo>
+<item key="3C5FB4A4-63FE-7DEA-CC3E-DAC09AE1D28A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="denumire_desciplina" id="8F3D4E0C-55FC-8897-2DD6-9ED80603C9BF">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 15:21:18 UTC</createdTime>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<engineerTo>
+<item key="3C5FB4A4-63FE-7DEA-CC3E-DAC09AE1D28A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_profesor" id="A814BF26-6E2B-17AA-E478-5479BEF87DC7">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 15:57:37 UTC</createdTime>
+<generatorID>A948D512-0702-9763-367A-78A300427C67</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<engineerTo>
+<item key="3C5FB4A4-63FE-7DEA-CC3E-DAC09AE1D28A" value="true"/>
+</engineerTo>
+<referedAttribute>9662589D-D740-85BE-EF89-57686F89C72B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cod_catalog " id="D27EA220-0CB5-2A10-BD0E-649C651D2F8E">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:17 UTC</createdTime>
+<generatorID>E5837890-CAE4-7D62-65B5-FDB7C112EE0F</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<engineerTo>
+<item key="3C5FB4A4-63FE-7DEA-CC3E-DAC09AE1D28A" value="true"/>
+</engineerTo>
+<referedAttribute>DC59B305-63DC-C81C-63EB-87C61D0BD674</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F8E918CB-B986-49B6-FA53-F2A42927AE58" name="disciplina PK">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 15:21:16 UTC</createdTime>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="3C5FB4A4-63FE-7DEA-CC3E-DAC09AE1D28A" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5A20835C-8BAA-34BB-FC37-1E2B0DA661AB</attributeRef>
+<attributeRef>A814BF26-6E2B-17AA-E478-5479BEF87DC7</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

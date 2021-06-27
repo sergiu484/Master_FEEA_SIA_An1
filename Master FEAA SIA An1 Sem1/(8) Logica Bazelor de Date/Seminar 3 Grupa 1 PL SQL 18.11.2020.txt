@@ -1,0 +1,55 @@
+--1. Creati o procedura in care sa parcurgeti notele fiecarui student din anul 2. In interiorul LOOP-uui verificati cate note de 10 
+--a avut fiecare student si afisati numele lui si numarul notelor de 10;
+
+create or replace procedure note_de_10 as
+    v_note_de_10 number;
+begin
+    for i in (select nr_matricol, nume, prenume from studenti where an = 2) loop
+        select count(*) into v_note_de_10 from note where nr_matricol = i.nr_matricol and valoare = 10;
+        dbms_output.put_line('Studentul '|| i.nume || ' '|| i.prenume || ' are '|| v_note_de_10 ||' note de 10');
+    end loop;
+end;
+ 
+begin
+    note_de_10;
+end;
+
+--2. Creati o procedura care sa dubleze prin update bursa unui student (dat prin ID). Daca valoarea bursei dupa modificare este 
+--mai mare de 600, ea va fi limitata la 600 si se va notifica acest lucru;
+
+create or replace procedure update_bursa_student (pi_matricol number) as
+    v_bursa number;
+begin
+    select bursa into v_bursa from studenti where nr_matricol = pi_matricol;
+    if v_bursa * 2 > 600 then
+        dbms_output.put_line('Bursa maxima este 600');
+        v_bursa := 600;
+    elsif v_bursa > 0 and v_bursa * 2 >= 600 then 
+        dbms_output.put_line('Bursa a fost dublata');
+        v_bursa := v_bursa * 2;
+    else
+        dbms_output.put_line('Bursa este 0');
+    end if;
+    update studenti set bursa = v_bursa where nr_matricol = pi_matricol;
+end;
+
+begin 
+    update_bursa_student(111); 
+end;
+
+set serveroutput on
+
+--3. Creati o functie care sa primeasca drept parametru id-ul unui profesor si sa returneze numarul de cursuri predate
+--de acel profesor (folositi tabela Didactic); apelati functia in LOOP intr-o procedura care va calcula apoi care este 
+--cel sau care sunt cei care predau cele mai multe cursuri si ii sau le va schimba gradul didactic in “Super”.
+
+create or replace function nr_de_cursuri (v_id VARCHAR2) return number as
+    v_nrcursuri number;
+begin
+    select count(*) into v_nrcursuri from didactic where id_prof = v_id;
+    return v_nrcursuri;
+end;
+
+begin
+    dbms_output.put_line(nr_de_cursuri('p1  ')); 
+end;

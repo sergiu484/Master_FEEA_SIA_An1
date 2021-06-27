@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C892774B-BC4A-3E21-9D09-E65453DE8183" containerWithKeyObject="4A3AF650-65DF-4477-BA6A-8410B57DE0EF" localFKIndex="D343DBE4-7EFD-DAFF-14DB-E86D3F7B62B7" name="Elevi_Burse_FK">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:48:16 UTC</createdTime>
+<generatorID>F9C14C9E-A4FE-E9CD-997F-DA69AB7AFFD3</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<referredTableLongName>Burse</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>3A302222-5B60-4B4E-2068-CC78C639F0F7</referredTableID>
+<keyObject>2F630725-6300-1A8E-FEAC-272CB1649D5C</keyObject>
+<referredKeyID>2F630725-6300-1A8E-FEAC-272CB1649D5C</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cod_bursa</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

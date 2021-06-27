@@ -1,0 +1,20 @@
+Test la laborator
+
+ 
+
+Sa se construiasca un pachet PLSQL prin intermediul caruia sa se faca managementul unei facultati pe baza tabelelor din schema studenti. In pachet va trebui sa aveti:
+
+
+o procedura ce returneaza varsta unui student (doar anii);
+o procedura care sa adauge un student in baza de date – in anul 1, 2 sau 3 (cu generare de ID, matricol si simulare de note la materiile din anii precedenti 
+- de exemplu daca este in anul 3 va avea note la materiile din anii 1 si 2)
+o procedura care sa elimine un student din baza de date (se vor elimina si notele studentului)
+o procedura care sa afiseze informatii despre un student: numar matricol, varsta (prin apel la procedura de la punctul 1), media tuturor notelor si al catelea este in grupa.
+
+ 
+
+Se va lucra in echipele stabilite. Fiecare echipa va trimite pana la astazi la ora 19:45 un mail pe adresele lucienlazar@gmail.com si robi_kristo@yahoo.com cu urmatorul continut: 
+idul echipei, numele studentilor care au participat la rezolvare, comanda de creare a pachetului si exemple de apelare a codului pentru fiecare din cele patru probleme. 
+Se va puncta atat codul cat si apelarea lui: doua puncte prezenta si cate doua puncte pentru fiecare problema (1,5 puncte pentru cod si 0,5 puncte pentru apelare). 
+Echipele care vor avea cod identic sau foarte asemanator la oricare din subiecte inclusiv nume de variabile si indentare vor primi punctaj 0. 
+Pentru orice intrebare despre test pe durata lui ne gasiti pe mine si pe Lucian pe Teams si pe Skype.

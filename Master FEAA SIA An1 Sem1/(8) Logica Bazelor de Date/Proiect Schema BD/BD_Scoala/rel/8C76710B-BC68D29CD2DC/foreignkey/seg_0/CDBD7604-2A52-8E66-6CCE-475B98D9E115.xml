@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CDBD7604-2A52-8E66-6CCE-475B98D9E115" containerWithKeyObject="1B675434-A194-CD33-97AF-E7BCFCE87052" localFKIndex="DBB35F37-B0A1-B818-DFFA-0FB3477009BB" name="Profesori_Discipline_FK">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:26:08 UTC</createdTime>
+<generatorID>8495BD9C-6C85-BFCC-1D59-5DB5CD155C21</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<referredTableLongName>Discipline</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>25C1BFDA-893F-12D7-D392-80322393DB24</referredTableID>
+<keyObject>C396A708-62CF-4431-666D-7B66779A46CB</keyObject>
+<referredKeyID>C396A708-62CF-4431-666D-7B66779A46CB</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_disciplina,Cataloage_cod_catalog,cod_profil</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

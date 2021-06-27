@@ -1,0 +1,122 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1B675434-A194-CD33-97AF-E7BCFCE87052" name="Profesori">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:48:16 UTC</createdTime>
+<generatorID>C4D1348E-7735-6429-0113-5724F7FB9F1F</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nume_prenume_profesor" id="072A20F0-2593-3F40-1A56-25CDCF6C7416">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:48:16 UTC</createdTime>
+<generatorID>06AC1FD9-631A-8D21-9127-C55A387BD8E7</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="telefon_profesor" id="94B3EF32-14F6-F031-BCA7-820856F46648">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:48:16 UTC</createdTime>
+<generatorID>7420FE30-3DB3-CFD0-5853-A078AC801E10</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email_profesor" id="472E1A9A-0D9C-C04F-889B-B20150E5CB71">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:48:16 UTC</createdTime>
+<generatorID>D94A08BB-745F-63DC-40A9-5ABAD61A6F97</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_disciplina" id="554802A5-AE27-F410-53B8-575B1A2DCF7A">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:26:08 UTC</createdTime>
+<generatorID>2FA0B400-1AC0-7C36-E48E-BFF7DD885231</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CDBD7604-2A52-8E66-6CCE-475B98D9E115" referredColumn="78D7E15B-763D-891D-9953-C78F3714EA6C"/>
+</associations>
+</Column>
+<Column name="cod_catalog" id="E1177713-DBE7-A081-9263-78DD35CA0F08">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:26:08 UTC</createdTime>
+<generatorID>C9B14FA0-4692-0CFC-8633-6778C15E9129</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CDBD7604-2A52-8E66-6CCE-475B98D9E115" referredColumn="41E1905C-A17E-EE51-162A-22DDEAE10650"/>
+</associations>
+</Column>
+<Column name="cod_profil" id="33A00449-D171-B5D1-240A-8C6D48DF964B">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:26:08 UTC</createdTime>
+<generatorID>629A1FF9-80DF-BDF9-6714-AEC0EA62979F</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CDBD7604-2A52-8E66-6CCE-475B98D9E115" referredColumn="0CCE5CC3-2528-D555-98DD-C6F7FE23DE47"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="86E8124B-80C5-0855-BD9E-45D8635D7D1C" name="Profesori_PK">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:26:08 UTC</createdTime>
+<generatorID>7FC94F74-3B0C-038E-0A04-248622B527E2</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="554802A5-AE27-F410-53B8-575B1A2DCF7A"/>
+<colUsage columnID="E1177713-DBE7-A081-9263-78DD35CA0F08"/>
+<colUsage columnID="33A00449-D171-B5D1-240A-8C6D48DF964B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DBB35F37-B0A1-B818-DFFA-0FB3477009BB" name="Profesori_Discipline_FK">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:26:08 UTC</createdTime>
+<generatorID>8495BD9C-6C85-BFCC-1D59-5DB5CD155C21</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="554802A5-AE27-F410-53B8-575B1A2DCF7A"/>
+<colUsage columnID="E1177713-DBE7-A081-9263-78DD35CA0F08"/>
+<colUsage columnID="33A00449-D171-B5D1-240A-8C6D48DF964B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

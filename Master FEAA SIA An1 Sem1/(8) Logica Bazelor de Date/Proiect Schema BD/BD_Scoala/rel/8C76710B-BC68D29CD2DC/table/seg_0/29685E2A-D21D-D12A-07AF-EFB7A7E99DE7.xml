@@ -1,0 +1,121 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="29685E2A-D21D-D12A-07AF-EFB7A7E99DE7" name="Concursuri">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:48:15 UTC</createdTime>
+<generatorID>DCF4C021-1D50-0DA7-79D9-5702195C5F8B</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nume_concurs" id="B731D683-05D0-3FC5-6E48-48743E139DEE">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:48:15 UTC</createdTime>
+<generatorID>6E184426-DAFA-A385-81BF-7CC50C5CE12D</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="materie_testata" id="3E0DE4BB-BEDB-7463-9EE0-1D7EE5D5DE6A">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:48:15 UTC</createdTime>
+<generatorID>3CA0396A-EB11-F512-78A2-9D4A5871DF53</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="perioada" id="0A9DE375-59F1-98DF-1C3D-78A1072F8C8E">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:48:15 UTC</createdTime>
+<generatorID>B389EF38-2583-7373-1BE3-6B443CB5E143</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Concursuri_Olimpiade_id_concurs_olimpiada" id="6A28B13B-BCCA-1B81-8EFF-6D722FFA58FB">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:26:08 UTC</createdTime>
+<generatorID>59FC9775-96E2-2A17-FD21-34443795A60D</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1E8B81DA-4813-40B9-82A3-7BEA2C47D9B9" referredColumn="7C71FF07-DDD5-4D7A-B873-D13689B3627B"/>
+</associations>
+</Column>
+<Column name="Concursuri_Olimpiade_Elevi_id_elev" id="39E2424E-97ED-F0A6-889C-AF21B36D1671">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:26:08 UTC</createdTime>
+<generatorID>2A3D2818-9829-92C6-98AF-5CAEA09E12A5</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1E8B81DA-4813-40B9-82A3-7BEA2C47D9B9" referredColumn="C269625D-4550-4182-9C90-5F7B71A6A0A2"/>
+</associations>
+</Column>
+<Column name="Concursuri_Olimpiade_cod_profil" id="28FC449D-8702-81CF-304E-C66F77FE6315">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:26:08 UTC</createdTime>
+<generatorID>FCFBE65E-0352-1C3F-4D4E-923445467641</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1E8B81DA-4813-40B9-82A3-7BEA2C47D9B9" referredColumn="DBD44211-364F-CB72-7B79-5CDB16A374CD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8FA749AA-F5CA-A978-0E64-B45D249CE181" name="Concursuri_PK">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:26:08 UTC</createdTime>
+<generatorID>1B91132A-D2B6-3435-6D70-9C7BFDDE5DF4</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6A28B13B-BCCA-1B81-8EFF-6D722FFA58FB"/>
+<colUsage columnID="39E2424E-97ED-F0A6-889C-AF21B36D1671"/>
+<colUsage columnID="28FC449D-8702-81CF-304E-C66F77FE6315"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="33ACBAAD-9205-D3DC-5B83-C9E05008CCE1" name="Concursuri_Concursuri_Olimpiade_FK">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:26:08 UTC</createdTime>
+<generatorID>6D62E8DB-47A8-A8E8-BD36-7BBB70DC4FC2</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6A28B13B-BCCA-1B81-8EFF-6D722FFA58FB"/>
+<colUsage columnID="39E2424E-97ED-F0A6-889C-AF21B36D1671"/>
+<colUsage columnID="28FC449D-8702-81CF-304E-C66F77FE6315"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

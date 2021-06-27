@@ -1,0 +1,43 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Diagram class="oracle.dbtools.crest.swingui.relational.DPVRelational" name="Relational_1" id="E2B4EA47-2900-051B-2A19-B65092C32419">
+<createdBy>ghimp</createdBy>
+<modifiedBy>ghimp</modifiedBy>
+<createdTime>2020-12-09 14:19:04 UTC</createdTime>
+<autoRoute>false</autoRoute>
+<boxInbox>true</boxInbox>
+<showLegend>false</showLegend>
+<showLabels>false</showLabels>
+<showRelAttributes>false</showRelAttributes>
+<gridEnabled>false</gridEnabled>
+<showGrid>false</showGrid>
+<diagramColor>-1</diagramColor>
+<display>false</display>
+<notation>1</notation>
+<objectViews>
+<OView class="oracle.dbtools.crest.swingui.TVNote" oid="91CA398E-C8A0-BC75-D15F-20FEA8429BC8" otype="Note" vid="2888A5EF-CBA0-3E58-85F1-D66EB67FF463">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="927" y="20" width="520" height="338"/>
+<comment>IdTeatru, NumeTeatru, AdresaTeatru, NumeLocalitateTeatru, IdDirectorTeatru, 
+
+IdPiesă, IdAutorPiesă, DatăPrimăPublicarePiesă, ŢarăPrimăPublicarePiesă, NumePersonajPiesă, 
+
+IdMontare, DataPrimeiReprezentaţiiAMontării, DetaliiMontare, 
+
+IdRegizor, IdScenograf, IdActor, IdActorRezervă, 
+
+IdPersoană, NumePrenume, DataNașterii, ȚaraNașterii, Telefon, AdresaEmail, 
+
+IdSpectacol, DataOraSpectacol, NumeSalăSpectacol, 
+
+CapacitateSală, IdRezervare, DataOraRezervării, Rând, Loc, 
+
+CodClient, NumeClient, TelefonClient, EmailClient, 
+
+SerieNrBilet, TarifBilet, 
+
+IdAnulareSpectacol, DataAnulareSpectacol, MotivAnulareSpectacol, 
+
+IdReturBilet, DataOraReturBilet, ComisionReținutLaReturBilet</comment>
+</OView>
+</objectViews>
+</Diagram>

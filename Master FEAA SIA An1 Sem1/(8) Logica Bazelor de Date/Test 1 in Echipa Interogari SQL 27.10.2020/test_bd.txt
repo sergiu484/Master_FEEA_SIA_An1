@@ -1,0 +1,40 @@
+-- Pentru fiecare formație și an în care formația a avut vânzări, afișați atât vânzările de pe anul curent,
+--cât și vânzările formației din toți anii precedenți.
+
+select denumireformatie, an, sum(incasari_usd) as Incasari
+    from formatii f join discografie d on f.idformatie = d.idformatie join vanzari_discuri vd on d.iddisc = vd.iddisc 
+    group by denumireformatie, an
+    order by an desc
+	
+	
+	
+-- Să se obțină un raport în care, fiecare linie să fie asociată unei țări, 
+-- iar coloanele să conțină numărul de albume lansate (în țara respectivă) 
+-- pentru fiecare an din perioada 2001-2005 (raportul va avea 1 (țara) + 5 coloane).
+-- Adăugați o coloană și un rând cu totaluri.
+select * from
+    (select tara, anlansare as an from 
+    discografie d join formatii f on d.idformatie = f.idformatie)
+    pivot(count(an) for an in(2001, 2002, 2003, 2004, 2005))
+    order by tara
+	
+-- În ce formaţii a cântat Eric Clapton?
+select distinct denumireformatie, numemuzician 
+from formatii f join discografie d on f.idformatie = d.idformatie join realizare_disc rd on 
+d.iddisc = rd.iddisc join muzicieni m on rd.idmuzician = m.idmuzician where numemuzician like'Jon Anderson'
+
+
+-- Care sunt formațiile care au avut vânzări măcar în (toți) anii în care a lansat albume formația Smile?
+
+with lansari as (select f.idformatie, f.denumireformatie, d.anlansare
+    from discografie d join formatii f on f.idformatie = d.idformatie where f.denumireformatie = 'Scorpions'),
+    
+    vanzari as (select f.idformatie, f.denumireformatie, vd.an from vanzari_discuri vd
+    join discografie d on d.iddisc = vd.iddisc join formatii f on f.idformatie = d.idformatie
+    where f.denumireformatie <> 'Scorpions')
+    
+    select distinct f.denumireformatie
+    from formatii f
+    join vanzari v on v.idformatie = f.idformatie
+    join lansari l on l.anlansare = v.an
+    

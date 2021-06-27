@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="1E8B81DA-4813-40B9-82A3-7BEA2C47D9B9" containerWithKeyObject="29685E2A-D21D-D12A-07AF-EFB7A7E99DE7" localFKIndex="33ACBAAD-9205-D3DC-5B83-C9E05008CCE1" name="Concursuri_Concursuri_Olimpiade_FK">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:26:08 UTC</createdTime>
+<generatorID>6D62E8DB-47A8-A8E8-BD36-7BBB70DC4FC2</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<referredTableLongName>Concursuri_Olimpiade</referredTableLongName>
+<arc>4964662F-5F91-59B2-C2F7-905F6B24F3C7</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>AA3F4BB8-AD92-7DD5-2393-677B08E9A533</referredTableID>
+<keyObject>602F4B94-39AD-385D-FC26-C4516BEE183F</keyObject>
+<referredKeyID>602F4B94-39AD-385D-FC26-C4516BEE183F</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_concurs_olimpiada,Elevi_id_elev,cod_profil</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

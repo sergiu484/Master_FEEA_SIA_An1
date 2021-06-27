@@ -1,0 +1,122 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="15E7D59F-F1FC-8779-4166-1756D8C7B2C1" name="Olimpiade">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:48:16 UTC</createdTime>
+<generatorID>13436537-BF42-8B83-1155-6BBA98E7CDB5</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nume_olimpiada" id="13EC5D6C-2AEE-63DA-6452-28722B9C4EDF">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:48:16 UTC</createdTime>
+<generatorID>02C9A990-5490-974F-EB3D-A8E64FF28C91</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="faza_olimpiada" id="FAC91A46-5F92-5B3B-4624-500199C5BD9D">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:48:16 UTC</createdTime>
+<generatorID>D49F1B2E-DFF1-8559-9350-7A74562091A6</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="locatie_desfasurare" id="BA79621D-8F86-E78D-1B29-18F51C6642BC">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:48:16 UTC</createdTime>
+<generatorID>E198F865-5D85-040D-9BFF-628432D9A336</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Concursuri_Olimpiade_id_concurs_olimpiada" id="43DA2037-8F44-988B-D929-8175321A0120">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:26:08 UTC</createdTime>
+<generatorID>D2B2C37C-9ED1-5542-FCC1-E62E4D578180</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A2183748-8B79-989D-885A-C41F54DE08FB" referredColumn="7C71FF07-DDD5-4D7A-B873-D13689B3627B"/>
+</associations>
+</Column>
+<Column name="Concursuri_Olimpiade_Elevi_id_elev" id="81201BAD-5BDF-928B-802B-0C7E68BFB279">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:26:08 UTC</createdTime>
+<generatorID>07061A67-B7FE-CD4F-F426-B358E4BF1A76</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A2183748-8B79-989D-885A-C41F54DE08FB" referredColumn="C269625D-4550-4182-9C90-5F7B71A6A0A2"/>
+</associations>
+</Column>
+<Column name="Concursuri_Olimpiade_cod_profil" id="AFD4F585-A89D-AF3C-BCD0-57E40949AC88">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:26:08 UTC</createdTime>
+<generatorID>EC2D8902-C278-8DE7-7BD8-CC649F03426B</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A2183748-8B79-989D-885A-C41F54DE08FB" referredColumn="DBD44211-364F-CB72-7B79-5CDB16A374CD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="10C6B2C2-875D-F3E2-4D47-B6B3556CEFF9" name="Olimpiade_PK">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:26:08 UTC</createdTime>
+<generatorID>A0772B51-0BF9-04D2-B35E-26F5D9FE6155</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="43DA2037-8F44-988B-D929-8175321A0120"/>
+<colUsage columnID="81201BAD-5BDF-928B-802B-0C7E68BFB279"/>
+<colUsage columnID="AFD4F585-A89D-AF3C-BCD0-57E40949AC88"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EBDCA07C-929F-E2B6-ADD3-1E1713DD49CE" name="Olimpiade_Concursuri_Olimpiade_FK">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:26:08 UTC</createdTime>
+<generatorID>E25F3CB9-BF9C-6FF8-908A-16FF5D0D75DE</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="43DA2037-8F44-988B-D929-8175321A0120"/>
+<colUsage columnID="81201BAD-5BDF-928B-802B-0C7E68BFB279"/>
+<colUsage columnID="AFD4F585-A89D-AF3C-BCD0-57E40949AC88"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

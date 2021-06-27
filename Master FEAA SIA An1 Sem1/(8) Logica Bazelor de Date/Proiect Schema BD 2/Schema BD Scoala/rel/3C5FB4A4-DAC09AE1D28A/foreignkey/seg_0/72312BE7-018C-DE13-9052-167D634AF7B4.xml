@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="72312BE7-018C-DE13-9052-167D634AF7B4" containerWithKeyObject="DE1AA7C4-C875-FA98-3EAA-4294709E8212" localFKIndex="FB0C4058-494E-E3E2-BC5D-92E955484524" name="elevi_burse_FK">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:54 UTC</createdTime>
+<generatorID>4676AA59-6B51-538D-20EA-0F9C6CD966CE</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<referredTableLongName>burse</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>6263E5C5-85C9-F6E8-91F4-2257856B7A39</referredTableID>
+<keyObject>97492DC6-9E0A-49EA-3CBD-2D179D347F7F</keyObject>
+<referredKeyID>97492DC6-9E0A-49EA-3CBD-2D179D347F7F</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cod_bursa</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

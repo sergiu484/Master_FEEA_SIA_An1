@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="384A1FE1-DDBE-D2D1-E2BC-91E1A1180A22" mainViewID="ED96F585-7403-912F-EEB9-ED1DEAFE9BDB">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 15:02:05 UTC</createdTime>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

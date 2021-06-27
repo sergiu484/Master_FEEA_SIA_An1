@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="36046D21-6216-C4ED-FD81-9D3C7C6748E5" name="ReturBani">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 15:32:39 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<preferredAbbreviation>RetururiBani</preferredAbbreviation>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ComisionRetinutLaReturBilet" id="7BB03DFD-A6EE-CDEF-1FEE-F5C0BDBF5E63">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 15:32:56 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdReturBilet" id="E114AD95-7402-00D8-5464-CB70DFA63865">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 15:33:37 UTC</createdTime>
+<generatorID>18E188E5-FCB1-3E48-D8C2-719390F86578</generatorID>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<referedAttribute>DF1E295C-F55A-BE38-19F7-542678F0A30E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="65DB0F75-6A81-6DB3-3F00-23DC922B77FF" name="ReturBani PK">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 15:33:13 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>7BB03DFD-A6EE-CDEF-1FEE-F5C0BDBF5E63</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

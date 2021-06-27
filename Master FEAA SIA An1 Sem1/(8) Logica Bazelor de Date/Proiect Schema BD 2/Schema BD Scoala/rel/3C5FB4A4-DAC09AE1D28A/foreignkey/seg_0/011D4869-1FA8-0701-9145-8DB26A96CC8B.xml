@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="011D4869-1FA8-0701-9145-8DB26A96CC8B" containerWithKeyObject="9C89ABA6-151B-2304-CF9B-01A0B6C0ACB9" localFKIndex="20078AB0-A7C1-E8E1-7C2F-0414DBB09268" name="olimpiade_concursuri_olimpiade_FK">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:54 UTC</createdTime>
+<generatorID>AC8DFFAB-C39E-8F14-F775-BAB71D08B96C</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<referredTableLongName>concursuri_olimpiade</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>290251DF-456A-35A3-85B0-97A629F704E7</referredTableID>
+<keyObject>77AC2C21-C0B8-6BBF-526A-23E507FFD945</keyObject>
+<referredKeyID>77AC2C21-C0B8-6BBF-526A-23E507FFD945</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_concurs_olimpiada</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

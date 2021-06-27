@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="4B8AF742-2ACD-97AF-38B1-65BB201A561E" containerWithKeyObject="25C1BFDA-893F-12D7-D392-80322393DB24" localFKIndex="536A43E2-19E0-6453-757C-A255433DEB96" name="Discipline_Cataloage_FK">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:48:16 UTC</createdTime>
+<generatorID>3EFEB699-944F-7766-0CFF-27A631710E59</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<referredTableLongName>Cataloage</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>DC3FDA80-642A-7CF3-3762-1AA5B97E1B7C</referredTableID>
+<keyObject>AD1512F9-A90C-8BE8-FEDE-A45B410A34FA</keyObject>
+<referredKeyID>AD1512F9-A90C-8BE8-FEDE-A45B410A34FA</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cod_catalog</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

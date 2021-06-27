@@ -1,0 +1,46 @@
+set serveroutput on
+create or replace package pachet_studenti as    
+    procedure varsta_student(pi_matricol integer);
+--    procedure adauga_student(id_student integer, matricol_student integer, note integer, materie varchar2, an integer);
+    procedure sterge_student(pi_matricol integer);
+    procedure afiseaza_informatii_student(pi_matricol integer);
+end;
+
+create or replace package body pachet_studenti as
+    procedure varsta_student(pi_matricol integer) as
+        v_an_data_nastere number;
+        v_varsta number;
+    begin
+        select extract(year from data_nastere) into v_an_data_nastere from studenti where nr_matricol = pi_matricol;
+        v_varsta :=  extract(year from sysdate) - v_an_data_nastere;
+        dbms_output.put_line(v_varsta);   
+    end;
+    procedure sterge_student (pi_matricol integer) as
+        v_numar_note integer;
+        v_nume_student varchar2(100);
+    begin
+        select nume into v_nume_student from studenti where nr_matricol = pi_matricol;
+        select count(*) into v_numar_note from note where nr_matricol = pi_matricol;
+        dbms_output.put_line('Studentul '|| v_nume_student || ' A fost sters.');
+        delete from note where nr_matricol = pi_matricol;
+        delete from studenti where nr_matricol = pi_matricol;
+    end;
+    
+    procedure afiseaza_informatii_student(pi_matricol integer) as
+        v_nume varchar2(100);
+        v_prenume varchar2(100);
+        v_nr_matricol integer;
+        v_an integer;
+    begin
+        select nr_matricol,nume, prenume, an into v_nr_matricol, v_nume, v_prenume, v_an from studenti where nr_matricol = pi_matricol;
+        dbms_output.put_line('Studentul cu numarul matricol '||v_nr_matricol||' are numele '||v_nume || v_prenume||' si este in anul ' ||v_an);   
+    end;
+
+end;
+
+begin
+    pachet_studenti.varsta_student(115);
+    pachet_studenti.sterge_student(114); --3
+    pachet_studenti.afiseaza_informatii_student(115); --4
+end;
+

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="020C6F51-2B0E-D411-EA80-C71FE0532903" containerWithKeyObject="0F45AEAC-AE7B-B231-7D76-690A662D8E48" localFKIndex="6361AC5A-2C4A-A146-ACA2-A79972B335FA" name="Elevi_Discipline_Elevi_FK">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:48:16 UTC</createdTime>
+<generatorID>564DA941-DADF-1B02-35EE-41417DBBE675</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<referredTableLongName>Elevi</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>4A3AF650-65DF-4477-BA6A-8410B57DE0EF</referredTableID>
+<keyObject>4A92709A-A1B4-E7FE-8E12-5D12ECFBC88A</keyObject>
+<referredKeyID>4A92709A-A1B4-E7FE-8E12-5D12ECFBC88A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_elev,Profiluri_cod_profil</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

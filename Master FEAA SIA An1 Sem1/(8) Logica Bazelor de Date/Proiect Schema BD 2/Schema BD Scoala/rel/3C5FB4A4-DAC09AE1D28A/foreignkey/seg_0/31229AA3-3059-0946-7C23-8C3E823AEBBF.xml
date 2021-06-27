@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="31229AA3-3059-0946-7C23-8C3E823AEBBF" containerWithKeyObject="073A61CF-37D0-0219-A8C6-4E2F2450C3A7" localFKIndex="32440408-AB9D-EAE8-DAB7-B9393EAFC254" name="clase_profile_FK">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:54 UTC</createdTime>
+<generatorID>9E98B1B5-808D-F42C-8AA4-577A9062AA6B</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<referredTableLongName>profile</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>4F2C564E-7D39-FEAF-3510-AF0D6990ECE8</referredTableID>
+<keyObject>4350DDAB-B621-DC09-D3E4-9CC4D22D50D6</keyObject>
+<referredKeyID>4350DDAB-B621-DC09-D3E4-9CC4D22D50D6</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cod_profil</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

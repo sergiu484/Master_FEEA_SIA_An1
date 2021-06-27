@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D987EAC0-3EEC-AEDD-07FE-B2B74187176F" name="Disciplina">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 16:51:37 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<preferredAbbreviation>Discipline</preferredAbbreviation>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_disciplina" id="2FA0B400-1AC0-7C36-E48E-BFF7DD885231">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 16:51:52 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="denumire_disciplina" id="C6BEDE22-C6A8-ABD5-DABA-078959858E9B">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 16:52:00 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cod_catalog" id="C9B14FA0-4692-0CFC-8633-6778C15E9129">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:00:34 UTC</createdTime>
+<generatorID>3EFEB699-944F-7766-0CFF-27A631710E59</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<referedAttribute>EAD3174C-3365-701D-2A24-5F65806C5130</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cod_profil" id="629A1FF9-80DF-BDF9-6714-AEC0EA62979F">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:23:52 UTC</createdTime>
+<generatorID>3EFEB699-944F-7766-0CFF-27A631710E59</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<referedAttribute>14A96D93-76FE-614E-9B56-A71931E3B9EA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="7FC94F74-3B0C-038E-0A04-248622B527E2" name="Disciplina PK">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 16:52:04 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>2FA0B400-1AC0-7C36-E48E-BFF7DD885231</attributeRef>
+<attributeRef>C9B14FA0-4692-0CFC-8633-6778C15E9129</attributeRef>
+<attributeRef>629A1FF9-80DF-BDF9-6714-AEC0EA62979F</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

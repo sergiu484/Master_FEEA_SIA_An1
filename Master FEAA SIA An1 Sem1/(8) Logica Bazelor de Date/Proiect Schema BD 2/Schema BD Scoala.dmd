@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Schema BD Scoala" id="54F2CB87-B8DC-9C24-DF42-CCE652FDF6E4" version="3.5">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 15:02:05 UTC</createdTime>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>54F2CB87-B8DC-9C24-DF42-CCE652FDF6E4</designId>
+</OSDM_Design>

@@ -1,0 +1,14 @@
+
+
+
+begin 
+	select facturat
+	into v_facturat
+	from luni_facturate
+	where luna = TO_NUMBER(TO_CHAR(:NEW.data_factura, 'mm'))
+	and an = TO_NUMBER(TO_CHAR(:NEW.data_factura,'yyyy'))
+	
+	if v_facturat = 1 THEN
+		raise_application_error(-20001,'nu putem modifica coloana deoarece luna a fost deja facturata ');
+	end if;or
+end;	

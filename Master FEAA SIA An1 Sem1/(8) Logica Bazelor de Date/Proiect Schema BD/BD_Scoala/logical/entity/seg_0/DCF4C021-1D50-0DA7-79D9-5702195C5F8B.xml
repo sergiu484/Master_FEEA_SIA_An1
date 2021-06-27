@@ -1,0 +1,116 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DCF4C021-1D50-0DA7-79D9-5702195C5F8B" name="Concurs">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:20:45 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<preferredAbbreviation>Concursuri</preferredAbbreviation>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="nume_concurs" id="6E184426-DAFA-A385-81BF-7CC50C5CE12D">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:21:06 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="materie_testata" id="3CA0396A-EB11-F512-78A2-9D4A5871DF53">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:27:25 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="perioada" id="B389EF38-2583-7373-1BE3-6B443CB5E143">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 17:27:52 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_concurs_olimpiada" id="59FC9775-96E2-2A17-FD21-34443795A60D">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:06:41 UTC</createdTime>
+<generatorID>6D62E8DB-47A8-A8E8-BD36-7BBB70DC4FC2</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<referedAttribute>CE268EC2-4BE1-D678-09DE-F97AA485A153</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_elev" id="2A3D2818-9829-92C6-98AF-5CAEA09E12A5">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:06:41 UTC</createdTime>
+<generatorID>6D62E8DB-47A8-A8E8-BD36-7BBB70DC4FC2</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<referedAttribute>9A775ECA-7EA6-EBEA-6E8E-81FD52220543</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cod_profil" id="FCFBE65E-0352-1C3F-4D4E-923445467641">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:23:18 UTC</createdTime>
+<generatorID>6D62E8DB-47A8-A8E8-BD36-7BBB70DC4FC2</generatorID>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<referedAttribute>4F2DE7C4-46D6-6C06-EBFD-71728A862699</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1B91132A-D2B6-3435-6D70-9C7BFDDE5DF4" name="Concurs PK">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-15 18:06:41 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<engineerTo>
+<item key="8C76710B-A039-5D21-ED6E-BC68D29CD2DC" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>59FC9775-96E2-2A17-FD21-34443795A60D</attributeRef>
+<attributeRef>2A3D2818-9829-92C6-98AF-5CAEA09E12A5</attributeRef>
+<attributeRef>FCFBE65E-0352-1C3F-4D4E-923445467641</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

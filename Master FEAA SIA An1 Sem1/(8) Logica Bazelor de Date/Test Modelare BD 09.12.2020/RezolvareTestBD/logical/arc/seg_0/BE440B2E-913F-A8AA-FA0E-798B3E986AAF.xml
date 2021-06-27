@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Arc class="oracle.dbtools.crest.model.design.logical.Arc" directorySegmentName="seg_0" id="BE440B2E-913F-A8AA-FA0E-798B3E986AAF" name="Arc_1">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 15:15:32 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<entity>D92A1BDE-3F85-4D64-D6F2-DA6177AB2BEE</entity>
+<relations>
+<relationID>D93F1ED3-B054-4F42-D80F-DF89D4A23103</relationID>
+<relationID>6A0535F3-BEEF-A58F-FA59-2C0DFA679344</relationID>
+<relationID>146B4D6E-8AAD-EA55-A453-D49895470724</relationID>
+</relations>
+</Arc>

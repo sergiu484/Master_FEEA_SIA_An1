@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="Relational_1" id="3C5FB4A4-63FE-7DEA-CC3E-DAC09AE1D28A" mainViewID="5853690D-5760-0EEC-BDF5-FCF28031FC52">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 15:02:06 UTC</createdTime>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+<selectedRDBMSSite>32076570-2523-435C-2E92-BF29817DFF70</selectedRDBMSSite>
+</relationalModel>

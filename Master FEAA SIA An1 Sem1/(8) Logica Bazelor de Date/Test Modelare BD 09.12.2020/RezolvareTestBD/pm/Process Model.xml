@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProcessModel class="oracle.dbtools.crest.model.design.process.ProcessModel" name="Process Model" id="8C2CCC38-FC48-89FC-A5BF-AD40ED0EE13D">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:18:25 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</ProcessModel>

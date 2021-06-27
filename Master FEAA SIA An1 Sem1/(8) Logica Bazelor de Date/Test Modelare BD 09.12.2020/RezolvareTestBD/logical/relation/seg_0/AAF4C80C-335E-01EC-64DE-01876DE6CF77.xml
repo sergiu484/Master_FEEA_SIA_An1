@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_36" directorySegmentName="seg_0" id="AAF4C80C-335E-01EC-64DE-01876DE6CF77">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 15:33:51 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<sourcePk>A60477D5-9C20-5E4E-83A6-F834C055833B</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>81939C82-FC44-F49B-C92D-1292CBBEF52A</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>9FA0ECA4-0B28-327E-8C8D-D098171C4303</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

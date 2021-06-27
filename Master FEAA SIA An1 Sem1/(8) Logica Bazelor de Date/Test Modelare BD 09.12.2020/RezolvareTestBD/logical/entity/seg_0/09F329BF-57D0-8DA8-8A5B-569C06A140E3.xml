@@ -1,0 +1,115 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="09F329BF-57D0-8DA8-8A5B-569C06A140E3" name="Spectacol">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:30:17 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<preferredAbbreviation>Spectacole</preferredAbbreviation>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IdSpectacol" id="52E952FE-EEA1-B7D8-DE2A-FCAC8BA3AD4C">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:30:38 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DataOraSpectacol" id="56D3A586-519B-261F-5A6E-26D52B3B9954">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:30:48 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NumeSalaSpectacol" id="C2485CCF-528D-8DE8-3677-E773C30676A9">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:31:07 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdMontare" id="528B4357-0E74-42A8-78BF-85C046A7CF46">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:49:17 UTC</createdTime>
+<generatorID>B5399E10-A0B2-59C2-2071-C5C0A23AFF53</generatorID>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<referedAttribute>67D83B85-076D-12B4-FAE1-55A72A40C515</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdRezervare" id="00657485-B814-E883-2616-488FEBCD9366">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 15:09:14 UTC</createdTime>
+<generatorID>872575D0-B922-910E-CCF3-2BC379E71F22</generatorID>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<referedAttribute>630804C8-C1D2-0235-F9B5-488E9FCFD0C4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdTeatru" id="09E0D807-4E98-F63A-E9BC-56E79E94C16D">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 15:21:26 UTC</createdTime>
+<generatorID>872575D0-B922-910E-CCF3-2BC379E71F22</generatorID>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<referedAttribute>EBB8A0DD-45B5-6E31-5FB4-572F2490FE65</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4D37C11E-5721-4937-974C-4D04346E36A1" name="Spectacol PK">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:30:36 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0236987A-EE88-E8C7-96DA-3D319DFB8100</attributeRef>
+<attributeRef>52E952FE-EEA1-B7D8-DE2A-FCAC8BA3AD4C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

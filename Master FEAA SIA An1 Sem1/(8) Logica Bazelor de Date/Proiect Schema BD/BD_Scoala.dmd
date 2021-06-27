@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="BD_Scoala" id="3B7CBC84-86ED-AEE7-0670-3108F1268CE2" version="3.5">
+<createdBy>YudHistin</createdBy>
+<createdTime>2020-12-10 19:44:36 UTC</createdTime>
+<ownerDesignName>BD_Scoala</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>3B7CBC84-86ED-AEE7-0670-3108F1268CE2</designId>
+</OSDM_Design>

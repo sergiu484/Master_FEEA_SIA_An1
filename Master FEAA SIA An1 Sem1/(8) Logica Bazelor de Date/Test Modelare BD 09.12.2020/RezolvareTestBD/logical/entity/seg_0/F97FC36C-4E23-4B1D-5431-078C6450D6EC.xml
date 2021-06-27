@@ -1,0 +1,129 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F97FC36C-4E23-4B1D-5431-078C6450D6EC" name="Bilet">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:34:01 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<preferredAbbreviation>Bilete</preferredAbbreviation>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="SerieNrBilet" id="67C1A6BA-C5E9-011A-0282-BAA6513D2270">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:34:08 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TarifBilet" id="06D73670-4525-B7B3-977C-377A0132019A">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:34:19 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Attribute_1" id="24E403F3-990A-3481-337F-91142040C801">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:45:58 UTC</createdTime>
+<generatorID>C89F72F4-C138-D52A-9A52-AE3E231ADE0E</generatorID>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<referedAttribute>0236987A-EE88-E8C7-96DA-3D319DFB8100</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdSpectacol" id="33800E2D-DDDB-7352-ECE1-BBFD1B543139">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:45:58 UTC</createdTime>
+<generatorID>C89F72F4-C138-D52A-9A52-AE3E231ADE0E</generatorID>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<referedAttribute>52E952FE-EEA1-B7D8-DE2A-FCAC8BA3AD4C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdRezervare" id="54B4E08F-CAEA-1EB7-E705-6FF6AA7660C9">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:46:53 UTC</createdTime>
+<generatorID>89EB9671-CC65-AD79-D702-1CA5A5A77DA9</generatorID>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<referedAttribute>630804C8-C1D2-0235-F9B5-488E9FCFD0C4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CodClient" id="60D9C6D3-4BB9-3877-1684-07CC222C9C26">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:53:37 UTC</createdTime>
+<generatorID>F4F54C95-4BE5-95E2-0E73-9D4BF1F9A4CD</generatorID>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<referedAttribute>28C7870C-A545-8A49-8473-3F763E17AADC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdTeatru" id="3BF4A275-B7C1-8E82-9BD7-C6EE653C775B">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 15:21:26 UTC</createdTime>
+<generatorID>89EB9671-CC65-AD79-D702-1CA5A5A77DA9</generatorID>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<referedAttribute>EBB8A0DD-45B5-6E31-5FB4-572F2490FE65</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="40BDE313-C306-BB7B-3103-88F7FC3A0124" name="Bilet PK">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:34:31 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>67C1A6BA-C5E9-011A-0282-BAA6513D2270</attributeRef>
+<attributeRef>24E403F3-990A-3481-337F-91142040C801</attributeRef>
+<attributeRef>33800E2D-DDDB-7352-ECE1-BBFD1B543139</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

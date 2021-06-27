@@ -1,0 +1,34 @@
+------------------------------ Creare pachete --------------------------------------------------------
+set serveroutput on
+create or replace package pachet_studenti as
+    procedure afla_nume_student(pi_matricol integer);
+end;
+
+create or replace package body pachet_studenti as
+    procedure afla_nume_student(pi_matricol integer) as
+        v_nume varchar2(100);        
+    begin
+        select nume into v_nume from studenti where nr_matricol = pi_matricol;
+        dbms_output.put_line(v_nume);   
+    end;
+end;
+
+begin
+    pachet_studenti.afla_nume_student(111);
+end;
+
+
+******************************************************************************
+BEGIN
+	FOR i IN 
+		(SELECT valoare, s.nr_matricol, s.nume, c.titlu_curs FROM studenti s JOIN note n ON s.nr_matricol = n.nr_matricol JOIN cursuri c 
+        ON c.id_curs = n.id_curs WHERE s.nr_matricol IN 
+            (SELECT s.nr_matricol FROM studenti s JOIN note n ON s.nr_matricol = n.nr_matricol JOIN cursuri c ON c.id_curs = n.id_curs 
+            GROUP BY s.nr_matricol HAVING AVG(n.valoare) = 
+                (SELECT MAX(medianotelor) FROM 
+                    (SELECT AVG(valoare) medianotelor FROM studenti s JOIN note n ON 
+                    s.nr_matricol = n.nr_matricol GROUP BY s.nr_matricol HAVING COUNT(*) >= 3))))
+	LOOP
+		DBMS_OUTPUT.PUT_LINE(i.valoare||' '||i.nume || ' are note la ' || i.titlu_curs);
+	END LOOP;
+END;

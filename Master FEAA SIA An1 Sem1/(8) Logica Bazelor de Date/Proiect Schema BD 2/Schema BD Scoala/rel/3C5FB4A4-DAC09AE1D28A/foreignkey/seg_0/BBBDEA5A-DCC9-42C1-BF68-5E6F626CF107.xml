@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="BBBDEA5A-DCC9-42C1-BF68-5E6F626CF107" containerWithKeyObject="DE1AA7C4-C875-FA98-3EAA-4294709E8212" localFKIndex="09B119AB-286D-3945-F3A4-F4274D88B4F4" name="elevi_activitati_de_dezvoltare_FK">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:54 UTC</createdTime>
+<generatorID>5161A25A-093F-B3EB-219B-F2179BE879FD</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<referredTableLongName>activitati_de_dezvoltare</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>1FEDACC7-D094-FD20-263A-56ECD349809C</referredTableID>
+<keyObject>DA375BAA-9B1D-E7EE-57AB-A957CCA802D6</keyObject>
+<referredKeyID>DA375BAA-9B1D-E7EE-57AB-A957CCA802D6</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cod_activitate</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

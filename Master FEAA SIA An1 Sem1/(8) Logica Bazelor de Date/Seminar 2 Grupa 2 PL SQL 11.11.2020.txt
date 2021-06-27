@@ -1,0 +1,101 @@
+
+---------------------------- Exemple de loop in PL/SQL ----------------------------------
+set serveroutput on
+declare
+    x number := 10;
+begin
+    loop 
+        dbms_output.put_line(x);
+        x := x + 10;
+        exit when x > 30;
+    end loop;
+    dbms_output.put_line('After exit x is: '|| x);
+end;
+/
+declare
+    a number(2) := 10;
+begin
+    while a < 15 loop
+        dbms_output.put_line('value of a: ' || a);
+        a := a + 1;
+    end loop;
+end;
+/ 
+declare
+    a number(2);
+begin 
+    for a in 10 .. 15 loop
+        dbms_output.put_line('value of a: ' || a);
+    end loop;
+end;
+
+
+-- Exemplu Ex 2 Afisati cea mai mica nota
+declare
+    v_nota_minima integer := 10;
+begin
+    for c in (select valoare from note where id_curs = 21) loop
+        if c.valoare < v_nota_minima then
+            v_nota_minima := c.valoare;
+        end if;
+        dbms_output.put_line(c.valoare);
+    end loop;
+    dbms_output.put_line('Cea mai mica nota a fost ' || v_nota_minima);
+end;
+
+-----------------------------------------------------Proceduri------------------------------------
+set serveroutput on
+create or replace procedure salut as
+    v_mesaj varchar2(100) := 'Hello World!';
+begin
+    v_mesaj := 'abc';
+    dbms_output.put_line(v_mesaj);
+end;
+
+--select * from user_objects where object_name = 'SALUT';
+
+begin
+    salut;
+end;
+---------------------------------------------------------------
+-- procedura cu 1 singur parametru
+select * from user_objects where object_name = 'MESAJ';
+
+create or replace procedure mesaj(pi_mesaj varchar2) as
+begin
+    dbms_output.put_line(pi_mesaj);
+end;
+
+begin 
+    mesaj('Mesaj');
+end;
+
+-------------------------------------------------------------
+--procedura cu 2 parametri
+create or replace procedure adunare(pi_numar1 integer, pi_numar2 integer) as
+    v_suma integer;
+begin
+    v_suma := pi_numar1 + pi_numar2;
+    dbms_output.put_line(v_suma);
+end;
+
+select * from user_objects where object_name = upper('adunare');
+
+begin
+    adunare(1,2);
+end;
+
+--------------------------------------------------------------
+-- 2 sau mai multi parametri de intrare + parametri de iesire
+create or replace procedure adunare2(pi_numar1 in integer, pi_numar2 in integer, po_suma out integer) as
+begin
+    po_suma := pi_numar1 + pi_numar2;
+end;
+select * from user_objects where object_name = upper('adunare2');
+
+declare
+    v_suma integer;
+begin
+    adunare2(1, 2, v_suma);
+    dbms_output.put_line(v_suma);
+end;

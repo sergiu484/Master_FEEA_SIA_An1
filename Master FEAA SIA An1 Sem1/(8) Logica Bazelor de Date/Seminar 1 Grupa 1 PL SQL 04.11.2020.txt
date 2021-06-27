@@ -1,0 +1,54 @@
+Scrieti blocuri de cod care sa:
+
+	1. Afiseze cati studenti sunt inscrisi in fiecare an de studii;
+set serveroutput on
+begin
+    for cx in (select an, count(*) as nrStudenti from studenti group by an order by an) loop
+        dbms_output.put_line('In anul '|| cx.an || ' sunt ' || cx.nrStudenti || ' studenti.' );
+    end loop;
+end;
+ 
+	2. Afiseze toti studentii bursieri; studentului cu cea mai mare bursa mai adaugati-i 100 de lei;
+set serveroutput on
+declare
+    v_bursamaxima number;
+begin
+    select max(bursa) into v_bursamaxima from studenti;
+    for cx in (select nume, bursa from studenti where bursa is not null) loop
+        if cx.bursa = v_bursamaxima then
+            dbms_output.put_line('Studentul' || cx.nume ||' are bursa ' || to_char(cx.bursa + 100));
+        else 
+            dbms_output.put_line('Studentul' || cx.nume ||' are bursa ' || cx.bursa);
+        end if;
+    end loop;
+end;
+
+	3. Afiseze toate notele la disciplina BD, inclusiv numele studentilor; adaugati o coloana status cu 
+valorile “promovat” pentru note peste 5 si “nepromovat” pentru note sub 5;
+begin 
+    for i in (select s.nume, s.prenume, n.valoare from studenti s join note n on s.nr_matricol = n.nr_matricol join cursuri c 
+    on c.id_curs = n.id_curs where c.titlu_curs = 'BD' and n.valoare >= 5) loop
+        dbms_output.put_line('Studentul '||i.nume || ' este promovat');
+    end loop;
+    for i in (select s.nume, s.prenume, n.valoare from studenti s join note n on s.nr_matricol = n.nr_matricol join cursuri c 
+    on c.id_curs = n.id_curs where c.titlu_curs = 'BD' and n.valoare < 5) loop
+        dbms_output.put_line('Studentul '||i.nume || ' este promovat');
+    end loop;
+end;	
+
+	4. Afiseze notele celui mai bun student din facultate care are macar trei note si materiile la care le-a luat. 
+Daca sunt doi studenti care au aceeasi medie va fi afisat cel din an mai mare sau, in cazul in care sunt in acelasi an,
+vor fi afisate notele primului in ordine alfabetica.
+BEGIN
+	FOR i IN 
+		(SELECT valoare, s.nr_matricol, s.nume, c.titlu_curs FROM studenti s JOIN note n ON s.nr_matricol = n.nr_matricol JOIN cursuri c 
+        ON c.id_curs = n.id_curs WHERE s.nr_matricol IN 
+            (SELECT s.nr_matricol FROM studenti s JOIN note n ON s.nr_matricol = n.nr_matricol JOIN cursuri c ON c.id_curs = n.id_curs 
+            GROUP BY s.nr_matricol HAVING AVG(n.valoare) = 
+                (SELECT MAX(medianotelor) FROM 
+                    (SELECT AVG(valoare) medianotelor FROM studenti s JOIN note n ON 
+                    s.nr_matricol = n.nr_matricol GROUP BY s.nr_matricol HAVING COUNT(*) >= 3))))
+	LOOP
+		DBMS_OUTPUT.PUT_LINE(i.valoare||' '||i.nume || ' are note la ' || i.titlu_curs);
+	END LOOP;
+END;

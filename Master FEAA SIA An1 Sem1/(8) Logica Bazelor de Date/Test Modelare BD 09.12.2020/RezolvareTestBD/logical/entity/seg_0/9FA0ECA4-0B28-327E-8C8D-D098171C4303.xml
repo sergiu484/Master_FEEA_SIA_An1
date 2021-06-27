@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9FA0ECA4-0B28-327E-8C8D-D098171C4303" name="ReturBilet">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:35:47 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<preferredAbbreviation>RetururiBilete</preferredAbbreviation>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IdReturBilet" id="DF1E295C-F55A-BE38-19F7-542678F0A30E">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:36:03 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DataOraReturBilet" id="1186D307-4F73-9FB8-53F5-041F492EC5E7">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:36:16 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="SerieNrBilet" id="8AAAB7C8-F516-1EF9-5C88-0DF76C9591B3">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:38:58 UTC</createdTime>
+<generatorID>A0B517C1-1CCE-DE8E-BC88-189F25894DD6</generatorID>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<referedAttribute>67C1A6BA-C5E9-011A-0282-BAA6513D2270</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Attribute_1" id="B147DC58-C779-961D-15DD-3D87E68C911A">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:45:58 UTC</createdTime>
+<generatorID>A0B517C1-1CCE-DE8E-BC88-189F25894DD6</generatorID>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<referedAttribute>24E403F3-990A-3481-337F-91142040C801</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdSpectacol" id="4332D54A-C4D5-5057-26D0-EFF35DD2ACC4">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:45:58 UTC</createdTime>
+<generatorID>A0B517C1-1CCE-DE8E-BC88-189F25894DD6</generatorID>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<referedAttribute>33800E2D-DDDB-7352-ECE1-BBFD1B543139</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CodClient" id="B683B448-9DF2-548B-CBAA-7C07F0B6423F">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 15:33:51 UTC</createdTime>
+<generatorID>AAF4C80C-335E-01EC-64DE-01876DE6CF77</generatorID>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<referedAttribute>28C7870C-A545-8A49-8473-3F763E17AADC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="147C959C-22EC-8EE4-CDD0-995AAA63149C" name="ReturBilet PK">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:36:15 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<engineerTo>
+<item key="803CF89E-0DB9-79B0-680F-555CE9473C18" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>DF1E295C-F55A-BE38-19F7-542678F0A30E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

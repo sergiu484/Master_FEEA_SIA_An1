@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProcessModel class="oracle.dbtools.crest.model.design.process.ProcessModel" name="Process Model" id="F5619EE2-23FB-539B-E52F-DD2A03DA9890">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 15:02:05 UTC</createdTime>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</ProcessModel>

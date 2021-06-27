@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="8193E20E-36FA-ACB8-FEFC-0860A9DB423D">
+<createdBy>ghimp</createdBy>
+<createdTime>2020-12-09 14:18:25 UTC</createdTime>
+<ownerDesignName>RezolvareTestBD</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="A0D35540-BF0D-A574-22F2-B51EC3BA8F42" containerWithKeyObject="073A61CF-37D0-0219-A8C6-4E2F2450C3A7" localFKIndex="F1BC1F04-E31A-7837-5A0C-69FD4FEA2A74" name="clase_orare_FK">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:54 UTC</createdTime>
+<generatorID>8AAE838E-792F-B210-222F-346C20A80C44</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<referredTableLongName>orare</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>EEEF6AD3-D073-D170-A4B6-BF65FCE975DA</referredTableID>
+<keyObject>1B92705D-EBC8-A811-0159-AE87052297C6</keyObject>
+<referredKeyID>1B92705D-EBC8-A811-0159-AE87052297C6</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>data_disciplina</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

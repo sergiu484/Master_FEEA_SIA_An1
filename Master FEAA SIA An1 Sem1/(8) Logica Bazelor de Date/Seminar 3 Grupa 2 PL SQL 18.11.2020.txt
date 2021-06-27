@@ -1,0 +1,206 @@
+-----------------------Exemplu 1-------------------------------------
+--select * from note where nr_matricol = 111;
+
+create or replace procedure sterge_note_student (pi_matricol integer) as
+    v_numar_note integer;
+    v_nume_student varchar2(100);
+begin
+    select nume into v_nume_student from studenti where nr_matricol = pi_matricol;
+    select count(*) into v_numar_note from note where nr_matricol = pi_matricol;
+    dbms_output.put_line('Studentul are '|| v_numar_note || ' note. Vor fi sterse.');
+    delete from note where nr_matricol = pi_matricol;
+end;
+--select object_name, object_type, status from user_objects where object_name = upper('sterge_note_student');
+begin 
+    sterge_note_student(111); 
+end;
+
+-----------------------Exemplu 2-------------------------------------
+create or replace function medie_student(pi_matricol integer) return number as
+    v_medie number;
+begin
+    select round(avg(valoare),2) into v_medie from note where nr_matricol = pi_matricol;
+    return v_medie;
+end;
+
+--select object_name, object_type, status from user_objects where object_name =upper('medie_student');
+
+declare 
+    v_medie number;
+begin
+    v_medie := medie_student(112);
+    dbms_output.put_line(v_medie);
+end;
+
+select nr_matricol, nume, medie_student(nr_matricol) from studenti;
+
+----------- Exercitii rezolvate de Student -------------------------------
+
+-- 1. Creati o procedura in care sa parcurgeti notele fiecarui student din anul 2. In interiorul LOOP-uui verificati cate note de 10 a avut fiecare student si 
+-- afisati numele lui si numarul notelor de 10;
+
+create or replace procedure note_de_10_studenti_an_2 as
+	v_nume varchar2(100);
+	v_note_de_10 integer;
+begin
+	FOR t IN (select s.nume, count(n.valoare) as note_de_10 from studenti s inner join note n on n.nr_matricol = s.nr_matricol where s.an = 2 group by s.nume) LOOP
+		dbms_output.put_line('Studentul ' || t.nume || ' are '|| t.note_de_10 || ' note de 10.');
+	END LOOP;
+end;
+
+-- testare
+
+begin
+	note_de_10_studenti_an_2;
+end;
+
+
+-- 2. Creati o procedura care sa dubleze prin update bursa unui student (dat prin ID). Daca valoarea bursei dupa modificare este mai mare de 600, ea va fi limitata la
+-- 600 si se va notifica acest lucru;
+
+set serveroutput on
+create or replace procedure update_burse(pi_matricol integer) as
+    v_valoare_bursa integer;
+begin
+    select bursa into v_valoare_bursa from studenti where nr_matricol = pi_matricol;
+    v_valoare_bursa := v_valoare_bursa * 2;
+    if v_valoare_bursa > 600 then
+        v_valoare_bursa := 600;
+        dbms_output.put_line('Valoare bursei ar fi depasit 600. Modificam la 600.');
+    end if;
+    update studenti set bursa = v_valoare_bursa where nr_matricol = pi_matricol;
+end;
+
+begin
+    update_burse(120);
+end;
+
+    select bursa from studenti where nr_matricol = 120
+
+-- 3. Creati o functie care sa primeasca drept parametru id-ul unui profesor si sa returneze numarul de cursuri predate de acel profesor (folositi tabela Didactic);
+-- apelati functia in LOOP intr-o procedura care va calcula apoi care este cel sau care sunt cei care predau cele mai multe cursuri si ii sau le va schimba gradul didactic in “Super”.
+
+set serveroutput on
+create or replace function super(pi_id_prof char) return number as
+    v_numar_cursuri number;
+begin
+    select count(*) into v_numar_cursuri from didactic where id_prof = pi_id_prof;
+    return v_numar_cursuri;
+end;
+
+begin
+    for tabel in (select id_prof, grad_didactic, super(id_prof) as nr_cursuri from profesori where super(id_prof) in (select super(id_prof) as nr_cursuri from profesori order by nr_cursuri desc fetch first row only)) loop
+        update profesori set grad_didactic = 'Super' where id_prof = tabel.id_prof;
+    end loop;
+end;
+
+select * from profesori
+
+----------------------------- Exercitii rezolvate de profesor -------------------------------
+
+-- 1. Creati o procedura in care sa parcurgeti notele fiecarui student din anul 2. In interiorul LOOP-uui verificati cate note de 10 a avut fiecare student
+-- si afisati numele lui si numarul notelor de 10;
+
+create or replace procedure decarii_secunzi as
+    v_decari integer;
+begin
+    for c in (select nr_matricol, nume from studenti where an = 2) loop
+        v_decari := 0;
+        for d in (select valoare from note where nr_matricol = c.nr_matricol) loop
+            if d.valoare = 10 then v_decari := v_decari + 1; end if;
+        end loop;
+        if v_decari = 0 then
+            dbms_output.put_line('Studentul ' || c.nume || ' nu are nici o nota de 10.');
+        else
+            dbms_output.put_line('Studentul ' || c.nume || ' are ' || v_decari || ' note de 10.');
+        end if;
+    end loop;
+end;
+begin 
+    decarii_secunzi;
+end;
+
+-- 2. Creati o procedura care sa dubleze prin update bursa unui student (dat prin ID).
+-- Daca valoarea bursei dupa modificare este mai mare de 600, ea va fi limitata la 600 si se va notifica acest lucru;
+create or replace procedure dubleaza_bursa(pi_matricol in integer) as
+    v_bursa_marita number;
+begin
+    select bursa * 2 into v_bursa_marita from studenti where nr_matricol = pi_matricol;
+    if v_bursa_marita > 600 then
+        update studenti set bursa = 600 where nr_matricol = pi_matricol;
+    else
+        update studenti set bursa = v_bursa_marita where nr_matricol = pi_matricol;
+    end if;
+end;
+
+select nr_matricol, nume, bursa from studenti where nr_matricol = 113;
+
+begin 
+    dubleaza_bursa(113);
+end;
+
+select nr_matricol, nume, bursa from studenti where nr_matricol = 113;
+
+-- 3. Creati o functie care sa primeasca drept parametru id-ul unui profesor si sa returneze numarul de cursuri predate de acel profesor (folositi tabela Didactic); 
+-- apelati functia in LOOP intr-o procedura care va calcula apoi care este cel sau care sunt cei care predau cele mai multe cursuri si ii sau le va schimba gradul didactic in “Super”.
+create or replace function numar_cursuri(pi_profesor in char) return integer as
+    v_cursuri integer;
+begin
+    select count(*) into v_cursuri from didactic where id_prof = pi_profesor;
+    return v_cursuri;
+end;
+
+declare
+    c integer;
+begin
+    c := numar_cursuri('p1 ');
+    dbms_output.put_line(c);
+end;
+
+create or replace procedure set_super_prof is
+    nr_cursuri integer;
+    max_cursuri integer := 0;
+    super_prof char(4);
+begin
+    for c in (select id_prof from profesori) loop
+        nr_cursuri := numar_cursuri(c.id_prof);
+        if nr_cursuri > max_cursuri then
+            max_cursuri := nr_cursuri;
+            super_prof := c.id_prof;
+        end if;
+    end loop;
+    update profesori set grad_didactic = 'Super' where id_prof = super_prof;
+end;
+
+-- 4) Cautarea grupei, numelui, a prenumelui, respectiv bursa studentului cu nr. matricol 113
+set serveroutput on
+declare
+    v_matricol_student integer := 113;
+    v_grupa_student varchar2(10);
+    v_nume_student varchar2(30);
+    v_prenume_student varchar2(30);
+    v_bursa_valoare numeric;
+begin
+    select nume, prenume, bursa, grupa into v_nume_student, v_prenume_student, v_bursa_valoare, v_grupa_student from studenti where nr_matricol = v_matricol_student;
+    dbms_output.put_line('Studentul aflat in grupa ' || v_grupa_student || ' cu numele ' || v_nume_student || ' ' || v_prenume_student || ' are o bursa in valoare de: ' || v_bursa_valoare);
+end;
+
+
+------------------------------ Creare pachete --------------------------------------------------------
+set serveroutput on
+create or replace package pachet_studenti as
+    procedure afla_nume_student(pi_matricol integer);
+end;
+
+create or replace package body pachet_studenti as
+    procedure afla_nume_student(pi_matricol integer) as
+        v_nume varchar2(100);        
+    begin
+        select nume into v_nume from studenti where nr_matricol = pi_matricol;
+        dbms_output.put_line(v_nume);   
+    end;
+end;
+
+begin
+    pachet_studenti.afla_nume_student(111);
+end;

@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5016B78F-387D-6109-4B69-4A501B4D5E8F" name="discipline">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>B1179FFF-7D8D-F62C-0076-F1B7044101DC</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_discplina" id="CA29309C-23B5-D5EE-CAA3-0E0D15915D25">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>5A20835C-8BAA-34BB-FC37-1E2B0DA661AB</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="denumire_desciplina" id="2C5ADE98-DFE0-A79B-5C95-85C72184DE0D">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>8F3D4E0C-55FC-8897-2DD6-9ED80603C9BF</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="profesori_id_profesor" id="F87ED1C1-730D-8E7A-BEB1-CEF900781DFA">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>A814BF26-6E2B-17AA-E478-5479BEF87DC7</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="49F8B6E0-9993-4346-19CB-13DA59196720" referredColumn="9341BA9B-99D2-094F-9624-170258BA01CE"/>
+</associations>
+</Column>
+<Column name="cataloage_cod_catalog" id="0725A450-3D69-CE67-CDC4-AFFAEC20E486">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>D27EA220-0CB5-2A10-BD0E-649C651D2F8E</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="82CA49D0-2867-E680-3E4B-48BA79DD6DAB" referredColumn="659D70A6-67A8-33BB-D8E3-7545D3BD8D18"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CDA6CD74-98C3-E74B-5AEE-21227AE4870D" name="discipline_PK">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:53 UTC</createdTime>
+<generatorID>F8E918CB-B986-49B6-FA53-F2A42927AE58</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CA29309C-23B5-D5EE-CAA3-0E0D15915D25"/>
+<colUsage columnID="F87ED1C1-730D-8E7A-BEB1-CEF900781DFA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="53F6E7ED-B565-8233-2BC9-7724A78D2795" name="discipline_profesori_FK">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:54 UTC</createdTime>
+<generatorID>A948D512-0702-9763-367A-78A300427C67</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F87ED1C1-730D-8E7A-BEB1-CEF900781DFA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E1940AA8-A019-6E8C-DE93-5954E2BAB4AD" name="discipline_cataloage_FK">
+<createdBy>ghimp</createdBy>
+<createdTime>2021-01-09 16:29:54 UTC</createdTime>
+<generatorID>E5837890-CAE4-7D62-65B5-FDB7C112EE0F</generatorID>
+<ownerDesignName>Schema BD Scoala</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0725A450-3D69-CE67-CDC4-AFFAEC20E486"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
