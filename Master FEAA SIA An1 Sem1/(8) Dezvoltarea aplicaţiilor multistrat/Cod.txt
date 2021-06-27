@@ -1,0 +1,1040 @@
+package PackageAdmission;
+
+public abstract interface AddAdmissionResult
+{
+  public abstract void AddAdmissionResult(AdmissionResult paramAdmissionResult);
+}
+
+package PackageAdmission;
+
+import PackageCandidates.Candidate;
+import PackageCandidates.ReadConfirmation;
+import PackageCandidates.ReadEnrollmentForm;
+import PackageDocuments.ReadDocument;
+import PackageExams.ReadResults;
+import PackageFaculty.AdmissionCriteria;
+import PackageFaculty.FacultyOption;
+
+public class Admission
+  implements AddAdmissionResult, ReadAdmissionResult, UpdateAdmissionResult, NotifyCandidate
+{
+  public AdmissionCriteria readAdmissionCriteria;
+  public ReadResults readResults;
+  public ReadDocument readDocument;
+  public ReadEnrollmentForm readEnrollmentForm;
+  public ReadConfirmation readConfirmation;
+  
+  public void finalize()
+    throws Throwable
+  {}
+  
+  public void AddAdmissionResult(AdmissionResult AdmissionResult) {}
+  
+  public void NotifyCandidate(String Notification) {}
+  
+  public AdmissionResult ReadAdmissionResult(FacultyOption FacultyOption)
+  {
+    return null;
+  }
+  
+  public AdmissionResult UpdateAdmissionResult(Candidate Candidate)
+  {
+    return null;
+  }
+}
+
+package PackageAdmission;
+
+import PackageCandidates.Candidate;
+import PackageFaculty.FacultyOption;
+
+public class AdmissionResult
+{
+  private boolean FinalResult;
+  public Candidate m_Candidate;
+  public FacultyOption m_FacultyOption;
+  
+  public void finalize()
+    throws Throwable
+  {}
+}
+
+
+package PackageAdmission;
+
+public abstract interface NotifyCandidate
+{
+  public abstract void NotifyCandidate(String paramString);
+}
+
+
+package PackageAdmission;
+
+import PackageFaculty.FacultyOption;
+
+public abstract interface ReadAdmissionResult
+{
+  public abstract AdmissionResult ReadAdmissionResult(FacultyOption paramFacultyOption);
+}
+
+package PackageAdmission;
+
+import PackageCandidates.Candidate;
+
+public abstract interface UpdateAdmissionResult
+{
+  public abstract AdmissionResult UpdateAdmissionResult(Candidate paramCandidate);
+}
+
+
+package PackageCandidates;
+
+import PackageExams.Grade;
+import java.io.PrintStream;
+
+public class Candidate
+{
+  private String Adress;
+  private boolean Confirmation;
+  private Integer ID;
+  private String Name;
+  public EnrollmentForm m_EnrollmentForm;
+  public Grade m_Grade;
+  
+  public String getAdress()
+  {
+    return this.Adress;
+  }
+  
+  public void setAdress(String adress)
+  {
+    this.Adress = adress;
+  }
+  
+  public boolean isConfirmation()
+  {
+    return this.Confirmation;
+  }
+  
+  public void setConfirmation(boolean confirmation)
+  {
+    this.Confirmation = confirmation;
+  }
+  
+  public Integer getID()
+  {
+    return this.ID;
+  }
+  
+  public void setID(Integer iD)
+  {
+    this.ID = iD;
+  }
+  
+  public String getName()
+  {
+    return this.Name;
+  }
+  
+  public void setName(String name)
+  {
+    this.Name = name;
+  }
+  
+  public EnrollmentForm getM_EnrollmentForm()
+  {
+    return this.m_EnrollmentForm;
+  }
+  
+  public void setM_EnrollmentForm(EnrollmentForm m_EnrollmentForm)
+  {
+    this.m_EnrollmentForm = m_EnrollmentForm;
+  }
+  
+  public Grade getM_Grade()
+  {
+    return this.m_Grade;
+  }
+  
+  public void setM_Grade(Grade m_Grade)
+  {
+    this.m_Grade = m_Grade;
+  }
+  
+  public void FillEnrollmentForm(EnrollmentForm enrollmentform)
+  {
+    System.out.println("Enrollment form succesfully submitted!");
+  }
+  
+  public void finalize()
+    throws Throwable
+  {}
+}
+
+
+package PackageCandidates;
+
+import PackageAdmission.NotifyCandidate;
+import PackageDocuments.UploadDocument;
+import PackageExams.ReadExamSubjects;
+import PackageFaculty.Faculty;
+
+public class Candidates
+{
+  public Faculty readFacultyOptions;
+  public ReadExamSubjects readExamSubjects;
+  public UploadDocument uploadDocuments;
+  public NotifyCandidate notifyCandidate;
+  public Faculty readRequiredDocumentsList;
+  
+  public void finalize()
+    throws Throwable
+  {}
+  
+  public void AddConfirmation(boolean Confirmation) {}
+  
+  public Confirmation ReadConfirmation(Candidate Confirmation)
+  {
+    return null;
+  }
+  
+  public EnrollmentForm ReadEnrollmentForm(Candidate Candidate)
+  {
+    return null;
+  }
+}
+
+package PackageCandidates;
+
+public class Confirmation
+{
+  private boolean Confirmation;
+  
+  public void finalize()
+    throws Throwable
+  {}
+}
+
+package PackageCandidates;
+
+import PackageFaculty.FacultyOption;
+import java.util.Date;
+
+public class EnrollmentForm
+{
+  private Date date;
+  private FacultyOption FacultyOption;
+  private Integer NO;
+  public Candidate m_Candidate;
+  
+  public Date getDate()
+  {
+    return this.date;
+  }
+  
+  public void setDate(Date date)
+  {
+    this.date = date;
+  }
+  
+  public FacultyOption getFacultyOption()
+  {
+    return this.FacultyOption;
+  }
+  
+  public void setFacultyOption(FacultyOption facultyOption)
+  {
+    this.FacultyOption = facultyOption;
+  }
+  
+  public Integer getNO()
+  {
+    return this.NO;
+  }
+  
+  public void setNO(Integer nO)
+  {
+    this.NO = nO;
+  }
+  
+  public Candidate getM_Candidate()
+  {
+    return this.m_Candidate;
+  }
+  
+  public void setM_Candidate(Candidate m_Candidate)
+  {
+    this.m_Candidate = m_Candidate;
+  }
+  
+  public void finalize()
+    throws Throwable
+  {}
+}
+
+package PackageCandidates;
+
+public abstract interface FillEnrollmentForm
+{
+  public abstract void FillEnrollmentForm(EnrollmentForm paramEnrollmentForm);
+}
+
+
+package PackageCandidates;
+
+public abstract interface ReadConfirmation
+{
+  public abstract Confirmation ReadConfirmation(Candidate paramCandidate);
+}
+
+package PackageCandidates;
+
+public abstract interface ReadEnrollmentForm
+{
+  public abstract EnrollmentForm ReadEnrollmentForm(Candidate paramCandidate);
+}
+
+package PackageDocuments;
+
+import java.util.Date;
+
+public class Document
+{
+  private Date Date;
+  private Integer NO;
+  private String Type;
+  
+  public Date getDate()
+  {
+    return this.Date;
+  }
+  
+  public void setDate(Date date)
+  {
+    this.Date = date;
+  }
+  
+  public Integer getNO()
+  {
+    return this.NO;
+  }
+  
+  public void setNO(Integer nO)
+  {
+    this.NO = nO;
+  }
+  
+  public String getType()
+  {
+    return this.Type;
+  }
+  
+  public void setType(String type)
+  {
+    this.Type = type;
+  }
+  
+  public void finalize()
+    throws Throwable
+  {}
+}
+
+package PackageDocuments;
+
+public class Documents
+  implements UploadDocument, ReadDocument, UpdateDocument
+{
+  public void finalize()
+    throws Throwable
+  {}
+  
+  public Document ReadDocument(Integer NO)
+  {
+    return null;
+  }
+  
+  public Document UpdateDocument(Document Document)
+  {
+    return null;
+  }
+  
+  public void UploadDocument(Document Document) {}
+}
+
+package PackageDocuments;
+
+public abstract interface ReadDocument
+{
+  public abstract Document ReadDocument(Integer paramInteger);
+}
+
+package PackageDocuments;
+
+public abstract interface UpdateDocument
+{
+  public abstract Document UpdateDocument(Document paramDocument);
+}
+
+package PackageDocuments;
+
+public abstract interface UploadDocument
+{
+  public abstract void UploadDocument(Document paramDocument);
+}
+
+package PackageExams;
+
+public abstract interface AddExam
+{
+  public abstract void AddExam(Exam paramExam);
+}
+
+package PackageExams;
+
+import java.util.List;
+
+public abstract interface AddExamSubjects
+{
+  public abstract void AddExamSubject(List<Subject> paramList);
+}
+
+package PackageExams;
+
+public abstract interface AddResults
+{
+  public abstract void AddResults(Grade paramGrade);
+}
+
+package PackageExams;
+
+public abstract interface AddScheduleExam
+{
+  public abstract void AddScheduleExam(ScheduleExam paramScheduleExam);
+}
+
+package PackageExams;
+
+public class Exam
+{
+  private Integer ID;
+  private String Name;
+  private String Type;
+  public Subject m_Subject;
+  public int m_Grade;
+  
+  public Integer getID()
+  {
+    return this.ID;
+  }
+  
+  public void setID(Integer iD)
+  {
+    this.ID = iD;
+  }
+  
+  public String getName()
+  {
+    return this.Name;
+  }
+  
+  public void setName(String name)
+  {
+    this.Name = name;
+  }
+  
+  public String getType()
+  {
+    return this.Type;
+  }
+  
+  public void setType(String type)
+  {
+    this.Type = type;
+  }
+  
+  public Subject getM_Subject()
+  {
+    return this.m_Subject;
+  }
+  
+  public void setM_Subject(Subject m_Subject)
+  {
+    this.m_Subject = m_Subject;
+  }
+  
+  public int getM_Grade()
+  {
+    return this.m_Grade;
+  }
+  
+  public void setM_Grade(int i)
+  {
+    this.m_Grade = i;
+  }
+  
+  public void finalize()
+    throws Throwable
+  {}
+}
+
+
+package PackageExams;
+
+import PackageCandidates.Candidate;
+import java.util.List;
+
+public class Exams
+  implements AddExam, AddExamSubjects, UpdateExamSubjects, ReadExamSubjects, AddScheduleExam, AddResults, ReadResults
+{
+  public void finalize()
+    throws Throwable
+  {}
+  
+  public void AddExam(Exam Exam) {}
+  
+  public void AddExamSubject(List<Subject> Subject) {}
+  
+  public void AddResults(Grade Grade) {}
+  
+  public void AddScheduleExam(ScheduleExam ScheduleExam) {}
+  
+  public List<Exam> ReadExamSubjects(Exam Exam)
+  {
+    return null;
+  }
+  
+  public Grade ReadResults(Candidate Candidate)
+  {
+    return Candidate.getM_Grade();
+  }
+  
+  public List<Subject> UpdateExamSubjects(Exam Exam)
+  {
+    return null;
+  }
+}
+
+package PackageExams;
+
+public class Grade
+{
+  private float GradeValue;
+  
+  public float getGradeValue()
+  {
+    return this.GradeValue;
+  }
+  
+  public void setGradeValue(float gradeValue)
+  {
+    this.GradeValue = gradeValue;
+  }
+  
+  public void finalize()
+    throws Throwable
+  {}
+}
+
+package PackageExams;
+
+import java.util.List;
+
+public abstract interface ReadExamSubjects
+{
+  public abstract List<Exam> ReadExamSubjects(Exam paramExam);
+}
+
+package PackageExams;
+
+import PackageCandidates.Candidate;
+
+public abstract interface ReadResults
+{
+  public abstract Grade ReadResults(Candidate paramCandidate);
+}
+
+
+package PackageExams;
+
+import java.sql.Time;
+import java.util.Date;
+
+public class ScheduleExam
+{
+  private Date Date;
+  private Time Hour;
+  private Integer ID;
+  public Exam m_Exam;
+  
+  public Date getDate()
+  {
+    return this.Date;
+  }
+  
+  public void setDate(Date date)
+  {
+    this.Date = date;
+  }
+  
+  public Time getHour()
+  {
+    return this.Hour;
+  }
+  
+  public void setHour(Time hour)
+  {
+    this.Hour = hour;
+  }
+  
+  public Integer getID()
+  {
+    return this.ID;
+  }
+  
+  public void setID(Integer iD)
+  {
+    this.ID = iD;
+  }
+  
+  public Exam getM_Exam()
+  {
+    return this.m_Exam;
+  }
+  
+  public void setM_Exam(Exam m_Exam)
+  {
+    this.m_Exam = m_Exam;
+  }
+  
+  public void finalize()
+    throws Throwable
+  {}
+}
+
+
+package PackageExams;
+
+public class Subject
+{
+  private Integer ID;
+  private float Points;
+  private String Requirement;
+  private String Type;
+  
+  public Integer getID()
+  {
+    return this.ID;
+  }
+  
+  public void setID(Integer iD)
+  {
+    this.ID = iD;
+  }
+  
+  public float getPoints()
+  {
+    return this.Points;
+  }
+  
+  public void setPoints(float points)
+  {
+    this.Points = points;
+  }
+  
+  public String getRequirement()
+  {
+    return this.Requirement;
+  }
+  
+  public void setRequirement(String requirement)
+  {
+    this.Requirement = requirement;
+  }
+  
+  public String getType()
+  {
+    return this.Type;
+  }
+  
+  public void setType(String type)
+  {
+    this.Type = type;
+  }
+  
+  public void finalize()
+    throws Throwable
+  {}
+}
+
+
+
+package PackageExams;
+
+import java.util.List;
+
+public abstract interface UpdateExamSubjects
+{
+  public abstract List<Subject> UpdateExamSubjects(Exam paramExam);
+}
+
+
+
+package PackageFaculty;
+
+public class AdmissionCriteria
+{
+  private String Criteria;
+  private Integer ID;
+  public Faculties m_Faculties;
+  
+  public String getCriteria()
+  {
+    return this.Criteria;
+  }
+  
+  public void setCriteria(String criteria)
+  {
+    this.Criteria = criteria;
+  }
+  
+  public Integer getID()
+  {
+    return this.ID;
+  }
+  
+  public void setID(Integer iD)
+  {
+    this.ID = iD;
+  }
+  
+  public Faculties getM_Faculties()
+  {
+    return this.m_Faculties;
+  }
+  
+  public void setM_Faculties(Faculties m_Faculties)
+  {
+    this.m_Faculties = m_Faculties;
+  }
+  
+  public void finalize()
+    throws Throwable
+  {}
+}
+
+
+package PackageFaculty;
+
+public class Faculties
+{
+  private Integer ID;
+  private String Name;
+  public FacultyOption m_FacultyOption;
+  public AdmissionCriteria m_AdmissionCriteria;
+  
+  public Integer getID()
+  {
+    return this.ID;
+  }
+  
+  public void setID(Integer iD)
+  {
+    this.ID = iD;
+  }
+  
+  public String getName()
+  {
+    return this.Name;
+  }
+  
+  public void setName(String name)
+  {
+    this.Name = name;
+  }
+  
+  public FacultyOption getM_FacultyOption()
+  {
+    return this.m_FacultyOption;
+  }
+  
+  public void setM_FacultyOption(FacultyOption m_FacultyOption)
+  {
+    this.m_FacultyOption = m_FacultyOption;
+  }
+  
+  public AdmissionCriteria getM_AdmissionCriteria()
+  {
+    return this.m_AdmissionCriteria;
+  }
+  
+  public void setM_AdmissionCriteria(AdmissionCriteria m_AdmissionCriteria)
+  {
+    this.m_AdmissionCriteria = m_AdmissionCriteria;
+  }
+  
+  public void finalize()
+    throws Throwable
+  {}
+}
+
+
+package PackageFaculty;
+
+import PackageAdmission.ReadAdmissionResult;
+import PackageDocuments.Document;
+import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Faculty
+{
+  public ReadAdmissionResult readAdmissionResult;
+  
+  public void finalize()
+    throws Throwable
+  {}
+  
+  public void Add(Faculties Faculties) {}
+  
+  public void AddAdmissionCriteria(AdmissionCriteria AdmissionCriteria)
+  {
+    System.out.println("Criteria added succesfuly");
+  }
+  
+  public void AddFacultyOptions(List<FacultyOption> FacultyOption) {}
+  
+  public void AddRequiredDocumentsList(List<Document> Document) {}
+  
+  public AdmissionCriteria ReadAdmissionCriteria(Faculty Faculty)
+  {
+    return null;
+  }
+  
+  public List<FacultyOption> ReadFacultyOptions(Faculties faculty)
+  {
+    List<FacultyOption> list = new ArrayList();
+    try
+    {
+      Faculties fac = new Faculties();
+      faculty.getName();
+      list.add(fac.getM_FacultyOption());
+      System.out.println(fac.getM_FacultyOption());
+    }
+    catch (Exception e)
+    {
+      System.out.println(e.getMessage());
+    }
+    return list;
+  }
+  
+  public List<Document> ReadRequiredDocumentsList(Faculty Faculty)
+  {
+    return null;
+  }
+  
+  public AdmissionCriteria UpdateAdmissionCriteria(AdmissionCriteria AdmissionCriteria)
+  {
+    return null;
+  }
+  
+  public FacultyOption UpdateFacultyOptions(FacultyOption FacultyOption)
+  {
+    return null;
+  }
+  
+  public List<Document> UpdateRequiredDocumentsList(Faculty Faculty)
+  {
+    return null;
+  }
+}
+
+
+
+
+package PackageFaculty;
+
+public class FacultyOption
+{
+  private String Description;
+  private String Name;
+  private int OptionID;
+  
+  public String getDescription()
+  {
+    return this.Description;
+  }
+  
+  public void setDescription(String description)
+  {
+    this.Description = description;
+  }
+  
+  public String getName()
+  {
+    return this.Name;
+  }
+  
+  public void setName(String string)
+  {
+    this.Name = string;
+  }
+  
+  public int getOptionID()
+  {
+    return this.OptionID;
+  }
+  
+  public void setOptionID(int optionID)
+  {
+    this.OptionID = optionID;
+  }
+  
+  public void finalize()
+    throws Throwable
+  {}
+}
+
+
+
+package Test;
+
+import PackageFaculty.AdmissionCriteria;
+import PackageFaculty.Faculties;
+import PackageFaculty.Faculty;
+
+public class TestAdmissionCriteria 
+{
+
+	public static void main(String[] args) 
+	{
+		 AdmissionCriteria admCrit = new AdmissionCriteria();
+		 Faculty faculty = new Faculty();	 
+		 Faculties fac = new Faculties();
+		   
+	     fac.setName("Feaa");
+		 fac.setID(1);  		   
+		 
+		 faculty.Add(fac);
+          
+         admCrit.setCriteria("this is the criteria");
+         admCrit.setM_Faculties(fac);
+         
+         faculty.AddAdmissionCriteria(admCrit);
+         
+         System.out.println("------------------------------------------------------------");
+            
+            
+	}
+}
+
+
+package Test;
+
+import PackageCandidates.Candidate;
+import PackageCandidates.Candidates;
+import PackageCandidates.EnrollmentForm;
+import PackageFaculty.FacultyOption;
+
+public class TestCandidate {
+
+	public static void main(String[] args) 
+	{
+       Candidate firstCandidate = new Candidate();
+       FacultyOption facultyOption = new FacultyOption();
+       
+       firstCandidate.setName("Ionel");
+       firstCandidate.setID(1111);
+       firstCandidate.setAdress("str fericirii");
+       
+       facultyOption.setName("Feaa");
+       facultyOption.setDescription("descp");
+       facultyOption.setOptionID(1);
+      
+       System.out.println("Name of the first candidate is: " + firstCandidate.getName());
+       System.out.println("------------------------------------------------------------");
+       
+       EnrollmentForm form = new EnrollmentForm();
+       form.setM_Candidate(firstCandidate);
+       form.setFacultyOption(facultyOption);
+       
+       firstCandidate.FillEnrollmentForm(form);
+       
+
+       
+       
+       
+       
+       
+
+	}
+
+}
+
+
+package Test;
+
+import PackageCandidates.Candidate;
+import PackageExams.Exam;
+import PackageExams.Exams;
+
+public class TestExamResults {
+
+	public static void main(String[] args) {
+		
+		 Candidate candidate = new Candidate();
+		 Exams ex = new Exams();
+		 Exam exam = new Exam();
+	       		
+	       candidate.setName("Ionel");
+	       candidate.setID(1111);
+	       candidate.setAdress("str fericirii");
+	       
+	       exam.setM_Grade(9);
+	       
+	       ex.AddExam(exam);
+	       
+	       ex.ReadResults(candidate);
+	      
+
+	       
+	       
+	       
+	       
+
+	}
+
+}
+
+
+package Test;
+
+import PackageFaculty.Faculties;
+import PackageFaculty.Faculty;
+import PackageFaculty.FacultyOption;
+
+public class TestFaculty {
+
+	public static void main(String[] args) {
+		
+		   FacultyOption facultyOption = new FacultyOption();	   
+		   Faculty faculty = new Faculty();	 
+     		 Faculties fac = new Faculties();
+			   
+		     fac.setName("Feaa");
+			 fac.setID(1);  		   
+			 
+			 faculty.Add(fac);
+	       
+	       facultyOption.setName("Informatica economica");
+	       facultyOption.setDescription("fara discipline optionale");
+	       facultyOption.setOptionID(1);
+	       
+	       fac.setM_FacultyOption(facultyOption);
+	            
+	       faculty.ReadFacultyOptions(fac);
+	       
+	       
+
+	}
+
+}
